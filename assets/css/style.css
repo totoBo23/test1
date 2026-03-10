@@ -716,6 +716,11 @@ h2::after {
   margin-top: 4px;
 }
 
+.address-autocomplete-host gmp-place-autocomplete {
+  display: block;
+  width: 100%;
+}
+
 .pac-container {
   z-index: 9999 !important;
   border-radius: 10px;
