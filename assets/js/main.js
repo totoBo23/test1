@@ -598,6 +598,7 @@ let parsedAddressPreview = null;
 let manualAddressMode = false;
 let placeAutocompleteElement = null;
 let usingNewPlaceAutocomplete = false;
+const fallbackGoogleMapsApiKey = "AIzaSyDq11rQki-0mHsjnOGqOS7d-i8IVLd-W-I";
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let heroCountersAnimated = false;
 let heroCounterObserver = null;
@@ -1049,7 +1050,7 @@ function parseAddressComponents(components) {
 }
 
 function loadGoogleMapsPlacesApi() {
-  const apiKey = window.MRG_CONFIG?.googleMapsApiKey?.trim();
+  const apiKey = window.MRG_CONFIG?.googleMapsApiKey?.trim() || fallbackGoogleMapsApiKey;
 
   if (!apiKey) {
     return Promise.reject(new Error("missing_api_key"));
