@@ -1154,8 +1154,8 @@ function initializeLegacyAddressAutocomplete() {
   });
 }
 
-function initializePlaceAutocompleteElement() {
-  const PlaceAutocompleteElement = google?.maps?.places?.PlaceAutocompleteElement;
+function initializePlaceAutocompleteElement(placeAutocompleteCtor = null) {
+  const PlaceAutocompleteElement = placeAutocompleteCtor || google?.maps?.places?.PlaceAutocompleteElement;
   if (!PlaceAutocompleteElement || !addressFields.autocompleteHost) {
     return false;
   }
@@ -1178,7 +1178,8 @@ function initializePlaceAutocompleteElement() {
   });
   placeAutocompleteElement.addEventListener("gmp-select", handlePlaceAutocompleteSelection);
   placeAutocompleteElement.addEventListener("gmp-placeselect", handlePlaceAutocompleteSelection);
-  placeAutocompleteElement.addEventListener("gmp-error", () => {
+  placeAutocompleteElement.addEventListener("gmp-error", (event) => {
+    console.error("PlaceAutocompleteElement error:", event);
     setAddressStatus("addressApiError");
   });
 
@@ -1191,15 +1192,21 @@ function initializePlaceAutocompleteElement() {
 async function initializeAddressAutocomplete() {
   try {
     await loadGoogleMapsPlacesApi();
+    let placesLibrary = null;
     if (typeof google?.maps?.importLibrary === "function") {
-      await google.maps.importLibrary("places");
+      placesLibrary = await google.maps.importLibrary("places");
     }
 
-    const initializedNewWidget = initializePlaceAutocompleteElement();
+    const initializedNewWidget = initializePlaceAutocompleteElement(placesLibrary?.PlaceAutocompleteElement);
     if (!initializedNewWidget) {
-      initializeLegacyAddressAutocomplete();
+      if (google?.maps?.places?.Autocomplete) {
+        initializeLegacyAddressAutocomplete();
+      } else {
+        throw new Error("no_supported_autocomplete_api");
+      }
     }
-  } catch (_error) {
+  } catch (error) {
+    console.error("Address autocomplete initialization failed:", error);
     setAddressStatus("addressApiError");
   }
 }
