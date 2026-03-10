@@ -1056,29 +1056,60 @@ function loadGoogleMapsPlacesApi() {
     return Promise.reject(new Error("missing_api_key"));
   }
 
-  if (window.google?.maps?.places) {
-    return Promise.resolve();
+  if (window.google?.maps?.importLibrary) {
+    return window.google.maps.importLibrary("places");
   }
 
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector("script[data-google-maps='places']");
-    if (existing) {
-      existing.addEventListener("load", () => resolve(), { once: true });
-      existing.addEventListener("error", () => reject(new Error("script_load_failed")), { once: true });
+  if (window.__mrgGoogleMapsLoaderPromise) {
+    return window.__mrgGoogleMapsLoaderPromise;
+  }
+
+  window.__mrgGoogleMapsLoaderPromise = new Promise((resolve, reject) => {
+    const g = {
+      key: apiKey,
+      v: "weekly",
+      language: currentLang === "de" ? "de" : "en"
+    };
+    const p = "The Google Maps JavaScript API";
+    const c = "google";
+    const l = "importLibrary";
+    const q = "__ib__";
+    const m = document;
+    let b = window;
+    b = b[c] || (b[c] = {});
+    const d = b.maps || (b.maps = {});
+    const r = new Set();
+    const e = new URLSearchParams();
+    let h = null;
+
+    const u = () =>
+      h ||
+      (h = new Promise((bootstrapResolve, bootstrapReject) => {
+        const script = m.createElement("script");
+        e.set("libraries", [...r].join(","));
+        Object.keys(g).forEach((key) => {
+          e.set(key.replace(/[A-Z]/g, (t) => `_${t[0].toLowerCase()}`), g[key]);
+        });
+        e.set("callback", `${c}.maps.${q}`);
+        script.src = `https://maps.${c}apis.com/maps/api/js?${e.toString()}`;
+        script.async = true;
+        script.defer = true;
+        script.dataset.googleMaps = "places";
+        d[q] = bootstrapResolve;
+        script.onerror = () => bootstrapReject(new Error(`${p} could not load.`));
+        m.head.appendChild(script);
+      }));
+
+    if (d[l]) {
+      d[l]("places").then(resolve).catch(reject);
       return;
     }
 
-    const script = document.createElement("script");
-    script.dataset.googleMaps = "places";
-    script.async = true;
-    script.defer = true;
-    script.src = `https://maps.googleapis.com/maps/api/js?loading=async&v=weekly&key=${encodeURIComponent(
-      apiKey
-    )}&libraries=places&language=${currentLang === "de" ? "de" : "en"}`;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("script_load_failed"));
-    document.head.appendChild(script);
+    d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n));
+    d[l]("places").then(resolve).catch(reject);
   });
+
+  return window.__mrgGoogleMapsLoaderPromise;
 }
 
 async function handlePlaceAutocompleteSelection(event) {
@@ -1192,11 +1223,7 @@ function initializePlaceAutocompleteElement(placeAutocompleteCtor = null) {
 
 async function initializeAddressAutocomplete() {
   try {
-    await loadGoogleMapsPlacesApi();
-    let placesLibrary = null;
-    if (typeof google?.maps?.importLibrary === "function") {
-      placesLibrary = await google.maps.importLibrary("places");
-    }
+    const placesLibrary = await loadGoogleMapsPlacesApi();
 
     const initializedNewWidget = initializePlaceAutocompleteElement(placesLibrary?.PlaceAutocompleteElement);
     if (!initializedNewWidget) {
