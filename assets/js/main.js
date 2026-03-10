@@ -596,6 +596,8 @@ let lastResult = null;
 let addressSelectedFromSuggestion = false;
 let parsedAddressPreview = null;
 let manualAddressMode = false;
+let placeAutocompleteElement = null;
+let usingNewPlaceAutocomplete = false;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let heroCountersAnimated = false;
 let heroCounterObserver = null;
@@ -608,6 +610,7 @@ const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
 const buildingAgeNotice = document.getElementById("building-age-notice");
 const addressFields = {
+  autocompleteHost: document.getElementById("addressAutocompleteHost"),
   search: document.getElementById("addressSearch"),
   street: document.getElementById("street"),
   houseNumber: document.getElementById("houseNumber"),
@@ -910,11 +913,25 @@ function clearManualAddressFields() {
   manualAddress.state.value = "";
 }
 
+function updateAutocompleteVisibility() {
+  if (usingNewPlaceAutocomplete) {
+    addressFields.autocompleteHost.hidden = manualAddressMode;
+    addressFields.search.hidden = true;
+    addressFields.search.disabled = true;
+    addressFields.search.required = false;
+    return;
+  }
+
+  addressFields.autocompleteHost.hidden = true;
+  addressFields.search.hidden = false;
+  addressFields.search.disabled = manualAddressMode;
+  addressFields.search.required = !manualAddressMode;
+}
+
 function setManualAddressMode(enabled) {
   manualAddressMode = enabled;
   manualAddress.wrapper.hidden = !enabled;
-  addressFields.search.disabled = enabled;
-  addressFields.search.required = !enabled;
+  updateAutocompleteVisibility();
   addressFields.search.setCustomValidity("");
 
   if (enabled) {
@@ -979,6 +996,21 @@ function renderAddressPreview(parsed) {
   addressFields.preview.hidden = false;
 }
 
+function applyResolvedAddress(parsed, formattedAddress = "") {
+  addressFields.street.value = parsed.street;
+  addressFields.houseNumber.value = parsed.houseNumber;
+  addressFields.postalCode.value = parsed.postalCode;
+  addressFields.city.value = parsed.city;
+  addressFields.state.value = parsed.state;
+  parsedAddressPreview = parsed;
+  addressSelectedFromSuggestion = true;
+  setAddressStatus("");
+
+  addressFields.search.value =
+    formattedAddress || `${parsed.street} ${parsed.houseNumber}, ${parsed.postalCode} ${parsed.city}`;
+  renderAddressPreview(parsedAddressPreview);
+}
+
 function parseAddressComponents(components) {
   const parsed = {
     street: "",
@@ -989,23 +1021,27 @@ function parseAddressComponents(components) {
   };
 
   components.forEach((component) => {
-    if (component.types.includes("route")) {
-      parsed.street = component.long_name;
+    const types = Array.isArray(component.types) ? component.types : [];
+    const longName = component.long_name || component.longText || "";
+    const shortName = component.short_name || component.shortText || "";
+
+    if (types.includes("route")) {
+      parsed.street = longName;
     }
-    if (component.types.includes("street_number")) {
-      parsed.houseNumber = component.long_name;
+    if (types.includes("street_number")) {
+      parsed.houseNumber = longName;
     }
-    if (component.types.includes("postal_code")) {
-      parsed.postalCode = component.long_name;
+    if (types.includes("postal_code")) {
+      parsed.postalCode = longName;
     }
-    if (component.types.includes("locality")) {
-      parsed.city = component.long_name;
+    if (types.includes("locality")) {
+      parsed.city = longName;
     }
-    if (!parsed.city && component.types.includes("postal_town")) {
-      parsed.city = component.long_name;
+    if (!parsed.city && types.includes("postal_town")) {
+      parsed.city = longName;
     }
-    if (component.types.includes("administrative_area_level_1")) {
-      parsed.state = normalizeStateName(component.long_name) || normalizeStateName(component.short_name);
+    if (types.includes("administrative_area_level_1")) {
+      parsed.state = normalizeStateName(longName) || normalizeStateName(shortName);
     }
   });
 
@@ -1035,60 +1071,134 @@ function loadGoogleMapsPlacesApi() {
     script.dataset.googleMaps = "places";
     script.async = true;
     script.defer = true;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&libraries=places&language=${
-      currentLang === "de" ? "de" : "en"
-    }`;
+    script.src = `https://maps.googleapis.com/maps/api/js?loading=async&v=weekly&key=${encodeURIComponent(
+      apiKey
+    )}&libraries=places&language=${currentLang === "de" ? "de" : "en"}`;
     script.onload = () => resolve();
     script.onerror = () => reject(new Error("script_load_failed"));
     document.head.appendChild(script);
   });
 }
 
+async function handlePlaceAutocompleteSelection(event) {
+  const placePrediction = event?.placePrediction || event?.detail?.placePrediction;
+
+  if (!placePrediction || typeof placePrediction.toPlace !== "function") {
+    clearResolvedAddress();
+    setAddressStatus("addressSelectSuggestionError");
+    return;
+  }
+
+  try {
+    const place = placePrediction.toPlace();
+    await place.fetchFields({ fields: ["addressComponents", "formattedAddress"] });
+
+    const components = place?.addressComponents || [];
+    if (!components.length) {
+      clearResolvedAddress();
+      setAddressStatus("addressSelectSuggestionError");
+      return;
+    }
+
+    const parsed = parseAddressComponents(components);
+    if (!parsed.street || !parsed.houseNumber || !parsed.postalCode || !parsed.city || !parsed.state) {
+      clearResolvedAddress();
+      setAddressStatus("addressIncompleteError");
+      return;
+    }
+
+    applyResolvedAddress(parsed, place.formattedAddress || "");
+  } catch (_error) {
+    clearResolvedAddress();
+    setAddressStatus("addressApiError");
+  }
+}
+
+function initializeLegacyAddressAutocomplete() {
+  if (!google?.maps?.places?.Autocomplete) {
+    throw new Error("legacy_autocomplete_unavailable");
+  }
+
+  const autocomplete = new google.maps.places.Autocomplete(addressFields.search, {
+    componentRestrictions: { country: "at" },
+    fields: ["address_components", "formatted_address", "name"],
+    types: ["address"]
+  });
+
+  usingNewPlaceAutocomplete = false;
+  updateAutocompleteVisibility();
+
+  addressFields.search.addEventListener("input", () => {
+    addressFields.search.setCustomValidity("");
+    clearResolvedAddress();
+  });
+
+  autocomplete.addListener("place_changed", () => {
+    const place = autocomplete.getPlace();
+    const components = place?.address_components || [];
+
+    if (!components.length) {
+      clearResolvedAddress();
+      setAddressStatus("addressSelectSuggestionError");
+      return;
+    }
+
+    const parsed = parseAddressComponents(components);
+    if (!parsed.street || !parsed.houseNumber || !parsed.postalCode || !parsed.city || !parsed.state) {
+      clearResolvedAddress();
+      setAddressStatus("addressIncompleteError");
+      return;
+    }
+
+    applyResolvedAddress(parsed, place.formatted_address || "");
+  });
+}
+
+function initializePlaceAutocompleteElement() {
+  const PlaceAutocompleteElement = google?.maps?.places?.PlaceAutocompleteElement;
+  if (!PlaceAutocompleteElement || !addressFields.autocompleteHost) {
+    return false;
+  }
+
+  addressFields.autocompleteHost.innerHTML = "";
+  placeAutocompleteElement = new PlaceAutocompleteElement({
+    includedRegionCodes: ["at"]
+  });
+
+  if ("requestedLanguage" in placeAutocompleteElement) {
+    placeAutocompleteElement.requestedLanguage = currentLang === "de" ? "de" : "en";
+  }
+  if ("placeholder" in placeAutocompleteElement) {
+    placeAutocompleteElement.placeholder = t("placeholderAddressSearch");
+  }
+
+  placeAutocompleteElement.addEventListener("input", () => {
+    clearResolvedAddress();
+    setAddressStatus("");
+  });
+  placeAutocompleteElement.addEventListener("gmp-select", handlePlaceAutocompleteSelection);
+  placeAutocompleteElement.addEventListener("gmp-placeselect", handlePlaceAutocompleteSelection);
+  placeAutocompleteElement.addEventListener("gmp-error", () => {
+    setAddressStatus("addressApiError");
+  });
+
+  addressFields.autocompleteHost.appendChild(placeAutocompleteElement);
+  usingNewPlaceAutocomplete = true;
+  updateAutocompleteVisibility();
+  return true;
+}
+
 async function initializeAddressAutocomplete() {
   try {
     await loadGoogleMapsPlacesApi();
+    if (typeof google?.maps?.importLibrary === "function") {
+      await google.maps.importLibrary("places");
+    }
 
-    const autocomplete = new google.maps.places.Autocomplete(addressFields.search, {
-      componentRestrictions: { country: "at" },
-      fields: ["address_components", "formatted_address", "name"],
-      types: ["address"]
-    });
-
-    addressFields.search.addEventListener("input", () => {
-      addressFields.search.setCustomValidity("");
-      clearResolvedAddress();
-    });
-
-    autocomplete.addListener("place_changed", () => {
-      const place = autocomplete.getPlace();
-      const components = place?.address_components || [];
-
-      if (!components.length) {
-        clearResolvedAddress();
-        setAddressStatus("addressSelectSuggestionError");
-        return;
-      }
-
-      const parsed = parseAddressComponents(components);
-      if (!parsed.street || !parsed.houseNumber || !parsed.postalCode || !parsed.city || !parsed.state) {
-        clearResolvedAddress();
-        setAddressStatus("addressIncompleteError");
-        return;
-      }
-
-      addressFields.street.value = parsed.street;
-      addressFields.houseNumber.value = parsed.houseNumber;
-      addressFields.postalCode.value = parsed.postalCode;
-      addressFields.city.value = parsed.city;
-      addressFields.state.value = parsed.state;
-      parsedAddressPreview = parsed;
-      addressSelectedFromSuggestion = true;
-      setAddressStatus("");
-
-      addressFields.search.value =
-        place.formatted_address || `${parsed.street} ${parsed.houseNumber}, ${parsed.postalCode} ${parsed.city}`;
-      renderAddressPreview(parsedAddressPreview);
-    });
+    const initializedNewWidget = initializePlaceAutocompleteElement();
+    if (!initializedNewWidget) {
+      initializeLegacyAddressAutocomplete();
+    }
   } catch (_error) {
     setAddressStatus("addressApiError");
   }
@@ -1131,6 +1241,12 @@ function setLanguage(lang) {
     setAddressStatus(addressFields.status.dataset.messageKey);
   }
   manualAddress.toggle.textContent = manualAddressMode ? t("manualAddressUseAutocomplete") : t("manualAddressToggle");
+  if (placeAutocompleteElement && "requestedLanguage" in placeAutocompleteElement) {
+    placeAutocompleteElement.requestedLanguage = currentLang === "de" ? "de" : "en";
+  }
+  if (placeAutocompleteElement && "placeholder" in placeAutocompleteElement) {
+    placeAutocompleteElement.placeholder = t("placeholderAddressSearch");
+  }
 
   if (lastResult) {
     renderResult(lastResult);
@@ -1225,9 +1341,13 @@ function validateStep(step) {
       searchField.setCustomValidity("");
 
       if (!addressSelectedFromSuggestion || !addressFields.state.value) {
-        searchField.setAttribute("aria-invalid", "true");
-        searchField.setCustomValidity(t("addressSelectSuggestionError"));
-        searchField.reportValidity();
+        if (usingNewPlaceAutocomplete) {
+          setAddressStatus("addressSelectSuggestionError");
+        } else {
+          searchField.setAttribute("aria-invalid", "true");
+          searchField.setCustomValidity(t("addressSelectSuggestionError"));
+          searchField.reportValidity();
+        }
         return false;
       }
     }
@@ -1423,6 +1543,9 @@ function resetJourney() {
   leadFeedback.textContent = "";
   addressFields.search.value = "";
   addressFields.search.setCustomValidity("");
+  if (placeAutocompleteElement && "value" in placeAutocompleteElement) {
+    placeAutocompleteElement.value = "";
+  }
   clearResolvedAddress();
   setAddressStatus("");
   setManualAddressMode(false);
