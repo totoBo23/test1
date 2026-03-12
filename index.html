@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@500;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -22,8 +22,10 @@
       <div class="container header-inner">
         <a href="#" class="brand" data-i18n="brandName">Check your Rent</a>
         <nav class="header-nav">
-          <a href="#calculator" data-i18n="navCalculator">Rechner</a>
+          <a href="#calculator" data-i18n="navCalculator">Rent Calculator</a>
+          <a href="#trust" data-i18n="navAbout">About Us</a>
           <a href="#faq" data-i18n="navFaq">FAQ</a>
+          <a href="mailto:contact@test.com" data-i18n="navContact">Contact us</a>
         </nav>
         <div class="lang-switch" role="group" aria-label="Language switch">
           <button class="lang-btn is-active" type="button" data-lang="de">DE</button>
@@ -44,12 +46,12 @@
         <div class="hero-dark-layer" aria-hidden="true"></div>
         <div class="container hero-content">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="heroEyebrow">Mietcheck fur Innsbruck und Tirol</p>
+            <p class="eyebrow" data-i18n="heroEyebrow">Mietcheck für Innsbruck und Tirol</p>
             <h1>
               <span class="hero-title-prefix" data-i18n="heroTitlePrefix">Prufen Sie schnell, ob Ihre Miete in </span><span class="hero-city" id="hero-city">Innsbruck</span><span class="hero-title-suffix" data-i18n="heroTitleSuffix"> zu hoch ist.</span>
             </h1>
             <p class="hero-subtitle" data-i18n="heroSubtitle">
-              In wenigen Minuten erhalten Sie eine Ersteinschatzung zu gesetzlicher Miete, moglicher Uberzahlung und potenzieller Ruckforderung.
+              In wenigen Minuten erhalten Sie eine Ersteinschätzung zu gesetzlicher Miete, möglicher Überzahlung und potenzieller Ruckforderung.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#calculator" data-i18n="heroCtaPrimary">Mietcheck starten</a>
@@ -58,15 +60,15 @@
             <div class="hero-metrics">
               <article class="hero-metric">
                 <strong data-i18n="heroMetric1Value" data-hero-counter>1 Min</strong>
-                <span data-i18n="heroMetric1Label">bis zur Ersteinschatzung</span>
+                <span data-i18n="heroMetric1Label">bis zur Ersteinschätzung</span>
               </article>
               <article class="hero-metric">
                 <strong data-i18n="heroMetric2Value" data-hero-counter>36 Monate</strong>
                 <span data-i18n="heroMetric2Label">potenzieller Erstattungszeitraum</span>
               </article>
               <article class="hero-metric">
-                <strong data-i18n="heroMetric3Value" data-hero-counter>100%</strong>
-                <span data-i18n="heroMetric3Label">kostenlos</span>
+                <strong data-i18n="heroMetric3Value" data-hero-counter>Risikofrei</strong>
+                <span data-i18n="heroMetric3Label">ohne Vorabkosten</span>
               </article>
             </div>
           </div>
@@ -76,25 +78,25 @@
       <section class="section didyouknow-section" id="why-we-do-this">
         <div class="container didyouknow-layout">
           <div class="didyouknow-copy">
-            <p class="didyouknow-eyebrow" data-i18n="whyEyebrow">Wussten Sie schon?</p>
-            <h2 data-i18n="whyTitle">Wussten Sie, dass manche Mieten gesetzlich gedeckelt sind?</h2>
+            <p class="didyouknow-eyebrow" data-i18n="whyEyebrow">Did you know?</p>
+            <h2 data-i18n="whyTitle">Many apartments in buildings built before 1945 are subject to legal rent limits.</h2>
             <p class="section-lead" data-i18n="whyLead">
-              Sie konnten aktuell mehr Nettomiete zahlen, als gesetzlich vorgesehen ist.
+              If you live in an older building, your rent may be higher than the legally permitted amount.
             </p>
 
             <div class="why-points">
               <p data-i18n="whyParagraph1">
-                In Osterreich gelten fur bestimmte Wohnungen klare Mietobergrenzen. Gerade in Altbau-Fallen wird diese Grenze in der Praxis nicht immer eingehalten.
+                Under Austrian tenancy law, many pre-1945 apartments fall under regulated rent rules. However, these limits are not always applied correctly when rental contracts are signed.
               </p>
               <p data-i18n="whyParagraph2">
-                Unser Mietcheck zeigt in wenigen Minuten, ob bei Ihrer Wohnung ein realistischer Verdacht auf Uberzahlung besteht.
+                Our rent check gives you a quick first estimate of whether your apartment may be affected.
               </p>
               <p data-i18n="whyParagraph3">
-                Wenn Ihr Fall passt, begleiten wir die nachsten Schritte mit Rechtspartnern - zuerst aussergerichtlich und wenn notig auch vor Gericht.
+                If your case appears eligible, we handle the next steps together with our legal partners.
               </p>
             </div>
             <a class="btn btn-primary didyouknow-cta" href="#calculator" data-i18n="whyCta">
-              Jetzt Uberzahlung berechnen
+              Check if your rent is too high
             </a>
           </div>
 
@@ -118,7 +120,7 @@
                 Klarer Ablauf in vier einfachen Schritten.
               </p>
               <p class="section-lead" data-i18n="howBenefit">
-                Sie reichen Ihren Fall ein, wir pruefen Miete und Vertrag und sagen Ihnen klar, ob eine Rueckforderung realistisch ist. Wenn sich eine Ueberzahlung zeigt, uebernehmen wir die Kommunikation mit Vermieter oder Hausverwaltung und versuchen zuerst eine Einigung. Nur wenn noetig gehen wir ueber weitere offizielle Schritte bis zum Gericht. In den meisten Faellen wird vorher eine Loesung erreicht.
+                Sie reichen Ihren Fall ein, wir prüfen Miete und Vertrag und sagen Ihnen klar, ob eine Rückforderung realistisch ist. Wenn sich eine Überzahlung zeigt, übernehmen wir die Kommunikation mit Vermieter oder Hausverwaltung und versuchen zuerst eine Einigung. Nur wenn nötig gehen wir über weitere offizielle Schritte bis zum Gericht. In den meisten Fällen wird vorher eine Lösung erreicht.
               </p>
               <a id="process-step1-cta" class="btn btn-primary process-main-cta" href="#calculator" data-i18n="howStep1Cta">Check Now</a>
             </div>
@@ -136,8 +138,8 @@
                 <span class="process-marker" aria-hidden="true">2</span>
                 <div class="process-item-copy">
                   <p class="process-step-label" data-i18n="howStep2Label">Step 2</p>
-                  <h3 data-i18n="howStep2Title">Unser Team prueft Ihren Fall</h3>
-                  <p data-i18n="howStep2Text">Wir pruefen die Unterlagen und melden uns zeitnah mit einer ersten Falleinschaetzung.</p>
+                  <h3 data-i18n="howStep2Title">Unser Team prüft Ihren Fall</h3>
+                  <p data-i18n="howStep2Text">Wir prüfen die Unterlagen und melden uns zeitnah mit einer ersten Fälleinschätzung.</p>
                 </div>
               </article>
               <article class="process-item">
@@ -145,15 +147,14 @@
                 <div class="process-item-copy">
                   <p class="process-step-label" data-i18n="howStep3Label">Step 3</p>
                   <h3 data-i18n="howStep3Title">Wir starten den Einigungsprozess</h3>
-                  <p data-i18n="howStep3Text">Wir uebernehmen die Kommunikation mit Vermieter oder Hausverwaltung und versuchen zuerst eine faire Loesung.</p>
+                  <p data-i18n="howStep3Text">Wir übernehmen die Kommunikation mit Vermieter oder Hausverwaltung und versuchen zuerst eine faire Lösung.</p>
                 </div>
               </article>
-              <article class="process-item">
-                <span class="process-marker" aria-hidden="true">4</span>
+              <article class="process-item process-item-result">
+                <span class="process-marker" aria-hidden="true">✓</span>
                 <div class="process-item-copy">
-                  <p class="process-step-label" data-i18n="howStep4Label">Step 4</p>
-                  <h3 data-i18n="howStep4Title">Sie erhalten Ihr Geld zurueck</h3>
-                  <p data-i18n="howStep4Text">Wenn der Anspruch durchgesetzt ist, erhalten Sie die Rueckzahlung gemaess Ergebnis.</p>
+                  <h3 data-i18n="howStep4Title">Sie erhalten Ihr Geld zurück</h3>
+                  <p data-i18n="howStep4Text">Wenn der Anspruch durchgesetzt ist, erhalten Sie die Rückzahlung gemäß Ergebnis.</p>
                 </div>
               </article>
             </div>
@@ -164,8 +165,8 @@
       <section class="section section-alt" id="calculator">
         <div class="container">
           <div class="section-header">
-            <h2 data-i18n="calcTitle">Berechnen Sie selbst, ob Ihre Miete uber der zulassigen Grenze liegt</h2>
-            <p data-i18n="calcLead">Mit wenigen Angaben sehen Sie, wie viel Sie moglicherweise zu viel gezahlt haben.</p>
+            <h2 data-i18n="calcTitle">Berechnen Sie selbst, ob Ihre Miete über der zulässigen Grenze liegt</h2>
+            <p data-i18n="calcLead">Mit wenigen Angaben sehen Sie, wie viel Sie möglicherweise zu viel gezahlt haben.</p>
           </div>
 
           <div class="calculator-shell">
@@ -178,7 +179,7 @@
                 </li>
                 <li>
                   <span class="step-badge">2</span>
-                  <span class="step-label" data-i18n="stepNav2">Gebaude</span>
+                  <span class="step-label" data-i18n="stepNav2">Gebäude</span>
                 </li>
                 <li>
                   <span class="step-badge">3</span>
@@ -211,7 +212,7 @@
                       data-i18n-placeholder="placeholderAddressSearch"
                       placeholder="z.B. Museumstrasse 12, Innsbruck"
                     />
-                    <p class="field-help" data-i18n="addressHelp">Starten Sie mit der Eingabe und wahlen Sie eine Adresse aus der Liste.</p>
+                    <p class="field-help" data-i18n="addressHelp">Starten Sie mit der Eingabe und wählen Sie eine Adresse aus der Liste.</p>
                     <button type="button" class="manual-toggle-btn" id="manual-address-toggle" data-i18n="manualAddressToggle">
                       Adresse manuell eingeben
                     </button>
@@ -222,7 +223,7 @@
                   <div class="field field-full" id="manual-address-fields" hidden>
                     <div class="grid-2 manual-grid">
                       <div class="field">
-                        <label for="manualStreet" data-i18n="labelStreet">Strasse</label>
+                        <label for="manualStreet" data-i18n="labelStreet">Straße</label>
                         <input id="manualStreet" type="text" data-i18n-placeholder="placeholderStreet" placeholder="z.B. Museumstrasse" />
                       </div>
                       <div class="field">
@@ -231,7 +232,7 @@
                       </div>
                       <div class="field">
                         <label for="manualPostalCode" data-i18n="labelPostalCode">Postleitzahl</label>
-                        <input id="manualPostalCode" type="text" inputmode="numeric" pattern="[0-9]{4,5}" data-i18n-placeholder="placeholderPostalCode" placeholder="z.B. 6020" />
+                        <input id="manualPostalCode" type="text" inputmode="numeric" data-i18n-placeholder="placeholderPostalCode" placeholder="z.B. 6020" />
                       </div>
                       <div class="field">
                         <label for="manualCity" data-i18n="labelCity">Stadt</label>
@@ -240,14 +241,14 @@
                       <div class="field field-full">
                         <label for="manualState" data-i18n="labelState">Bundesland</label>
                         <select id="manualState">
-                          <option value="" data-i18n="stateSelectPlaceholder">Bitte auswahlen</option>
+                          <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                           <option value="Tirol" data-i18n="stateTirol">Tirol</option>
                           <option value="Vienna" data-i18n="stateVienna">Wien</option>
                           <option value="Salzburg" data-i18n="stateSalzburg">Salzburg</option>
-                          <option value="Upper Austria" data-i18n="stateUpperAustria">Oberosterreich</option>
-                          <option value="Lower Austria" data-i18n="stateLowerAustria">Niederosterreich</option>
+                          <option value="Upper Austria" data-i18n="stateUpperAustria">Oberösterreich</option>
+                          <option value="Lower Austria" data-i18n="stateLowerAustria">Niederösterreich</option>
                           <option value="Styria" data-i18n="stateStyria">Steiermark</option>
-                          <option value="Carinthia" data-i18n="stateCarinthia">Karnten</option>
+                          <option value="Carinthia" data-i18n="stateCarinthia">Kärnten</option>
                           <option value="Vorarlberg" data-i18n="stateVorarlberg">Vorarlberg</option>
                           <option value="Burgenland" data-i18n="stateBurgenland">Burgenland</option>
                         </select>
@@ -267,34 +268,20 @@
               </section>
 
               <section class="form-step" data-step="2">
-                <h3 data-i18n="step2Title">Schritt 2: Gebaude-Basics</h3>
+                <h3 data-i18n="step2Title">Schritt 2: Gebäude-Basics</h3>
                 <div class="field stack-top">
                   <label class="label-with-tip">
-                    <span data-i18n="labelBuildingAge">Baujahr</span>
+                    <span data-i18n="labelBuildingAge">Wurde das Gebäude vor 1945 gebaut?</span>
                     <span class="help-tip" tabindex="0" aria-describedby="building-age-tooltip">?</span>
                     <span class="help-tip-text" id="building-age-tooltip" role="tooltip" data-i18n="labelBuildingAgeHelp">
-                      Falls Sie das Baujahr nicht genau kennen, wahlen Sie einfach "Unbekannt".
+                      Falls Sie es nicht sicher wissen, wählen Sie einfach "Unbekannt".
                     </span>
                   </label>
                   <div class="radio-group" role="radiogroup" aria-label="building age">
-                    <label><input type="radio" name="building_age" value="before_1953" required /> <span data-i18n="buildingBefore1953">Vor 1953</span></label>
-                    <label><input type="radio" name="building_age" value="1953_to_2021" /> <span data-i18n="building1953to2021">1953 bis 2021</span></label>
-                    <label><input type="radio" name="building_age" value="after_2021" /> <span data-i18n="buildingAfter2021">Nach 2021</span></label>
+                    <label><input type="radio" name="building_age" value="before_1945" required /> <span data-i18n="buildingBefore1945">Vor 1945</span></label>
+                    <label><input type="radio" name="building_age" value="from_1945_on" /> <span data-i18n="building1945OrLater">1945 oder später</span></label>
                     <label><input type="radio" name="building_age" value="unknown" /> <span data-i18n="buildingUnknown">Unbekannt</span></label>
                   </div>
-                </div>
-                <p class="notice" id="building-age-notice" hidden data-i18n="buildingNotice">
-                  Hinweis: Bei Gebauden nach 2021 gilt MRG in der Regel nicht.
-                </p>
-                <div class="field stack-top">
-                  <label for="buildingUnits" data-i18n="labelBuildingUnits">Wie viele Wohnungen sind im Gebaude?</label>
-                  <select id="buildingUnits" name="building_units" required>
-                    <option value="" data-i18n="unitsOptionPlaceholder">Bitte auswahlen</option>
-                    <option value="1_to_2" data-i18n="units1to2">1 bis 2</option>
-                    <option value="3_to_10" data-i18n="units3to10">3 bis 10</option>
-                    <option value="more_than_10" data-i18n="unitsMoreThan10">Mehr als 10</option>
-                    <option value="unknown" data-i18n="unitsUnknown">Unbekannt</option>
-                  </select>
                 </div>
               </section>
 
@@ -306,20 +293,33 @@
                       <span data-i18n="labelSize">Wohnflache (m²)</span>
                       <span class="help-tip" tabindex="0" aria-describedby="size-tooltip">?</span>
                       <span class="help-tip-text" id="size-tooltip" role="tooltip" data-i18n="labelSizeHelp">
-                        Nur die nutzbare Innenwohnflaeche in m² angeben. Keine Aussenflaechen (z. B. Balkon/Terrasse) einrechnen.
+                        Nur die nutzbare Innenwohnfläche in m² angeben. Keine Außenflächen (z. B. Balkon/Terrasse) einrechnen.
                       </span>
                     </label>
                     <input id="sizeM2" name="apartment_size_m2" type="number" min="10" max="400" step="0.1" required />
                   </div>
                   <div class="field">
                     <label for="netRent" class="label-with-tip">
-                      <span data-i18n="labelNetRent">Monatliche Nettomiete (EUR)</span>
+                      <span data-i18n="labelNetRent">Monatliche Miete (EUR)</span>
                       <span class="help-tip" tabindex="0" aria-describedby="net-rent-tooltip">?</span>
                       <span class="help-tip-text" id="net-rent-tooltip" role="tooltip" data-i18n="labelNetRentHelp">
-                        Bitte nur die reine Nettomiete angeben, ohne Betriebskosten oder andere Nebenkosten.
+                        Bitte nur die reine Miete angeben, ohne Betriebskosten oder andere Nebenkosten.
                       </span>
                     </label>
                     <input id="netRent" name="monthly_rent_net" type="number" min="0" step="0.01" required />
+                  </div>
+                </div>
+                <div class="field stack-top">
+                  <label data-i18n="labelContractType">Mietvertrag</label>
+                  <div class="radio-group" role="radiogroup" aria-label="contract type">
+                    <label>
+                      <input id="contractTypeOpen" type="radio" name="contract_type" value="unbefristet" required />
+                      <span data-i18n="contractTypeOpenEnded">Unbefristet</span>
+                    </label>
+                    <label>
+                      <input id="contractTypeFixed" type="radio" name="contract_type" value="befristet" />
+                      <span data-i18n="contractTypeFixedTerm">Befristet</span>
+                    </label>
                   </div>
                 </div>
                 <div class="grid-2 stack-top contract-dates">
@@ -333,10 +333,10 @@
                   </div>
                   <label class="checkbox field-full">
                     <input id="contractStillRunning" name="contract_still_running" type="checkbox" />
-                    <span data-i18n="labelContractStillRunning">Der Vertrag lauft noch</span>
+                    <span data-i18n="labelContractStillRunning">Der Vertrag läuft noch</span>
                   </label>
                   <p class="field-help field-full" data-i18n="contractDateHelp">
-                    Wenn der Vertrag noch lauft, wird bis heute gerechnet.
+                    Wenn der Vertrag noch läuft, wird bis heute gerechnet.
                   </p>
                 </div>
               </section>
@@ -347,6 +347,7 @@
                   <div class="field">
                     <label for="floorLevel" data-i18n="labelFloor">Stockwerk</label>
                     <select id="floorLevel" name="floor_level" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                       <option value="ground_floor" data-i18n="floorGround">Erdgeschoss</option>
                       <option value="1_to_3" data-i18n="floor1to3">1 bis 3</option>
                       <option value="4_plus" data-i18n="floor4plus">4 oder hoher</option>
@@ -355,6 +356,7 @@
                   <div class="field">
                     <label for="elevator" data-i18n="labelElevator">Aufzug</label>
                     <select id="elevator" name="elevator" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                       <option value="yes" data-i18n="yes">Ja</option>
                       <option value="no" data-i18n="no">Nein</option>
                     </select>
@@ -362,6 +364,7 @@
                   <div class="field">
                     <label for="balcony" data-i18n="labelBalcony">Aussenflache</label>
                     <select id="balcony" name="balcony" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                       <option value="none" data-i18n="balconyNone">Keine</option>
                       <option value="balcony" data-i18n="balconyBalcony">Balkon</option>
                       <option value="terrace" data-i18n="balconyTerrace">Terrasse</option>
@@ -370,6 +373,7 @@
                   <div class="field">
                     <label for="condition" data-i18n="labelCondition">Zustand</label>
                     <select id="condition" name="condition" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                       <option value="renovated" data-i18n="conditionRenovated">Saniert</option>
                       <option value="good" data-i18n="conditionGood">Gut</option>
                       <option value="normal" data-i18n="conditionNormal">Normal</option>
@@ -379,6 +383,7 @@
                   <div class="field">
                     <label for="equipment" data-i18n="labelEquipment">Ausstattung</label>
                     <select id="equipment" name="equipment" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                       <option value="luxury" data-i18n="equipmentLuxury">Hochwertig</option>
                       <option value="standard" data-i18n="equipmentStandard">Standard</option>
                       <option value="basic" data-i18n="equipmentBasic">Einfach</option>
@@ -388,6 +393,7 @@
                   <div class="field">
                     <label for="locationQuality" data-i18n="labelLocation">Lage</label>
                     <select id="locationQuality" name="location_quality" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
                       <option value="very_central" data-i18n="locationVeryCentral">Sehr zentral</option>
                       <option value="good" data-i18n="locationGood">Gut</option>
                       <option value="average" data-i18n="locationAverage">Durchschnittlich</option>
@@ -398,55 +404,55 @@
               </section>
 
               <section class="form-step" data-step="5">
-                <h3 data-i18n="step5Title">Schritt 5: Ihre Ersteinschatzung</h3>
+                <h3 data-i18n="step5Title">Schritt 5: Ihre Ersteinschätzung</h3>
+                <div class="result-summary" id="result-summary"></div>
                 <p class="step-lead" id="result-intro" data-i18n="resultIntro">
-                  Hier sehen Sie zuerst Ihren potenziellen Gewinn.
+                  Hier ist Ihre Ersteinschätzung auf einen Blick.
                 </p>
+                <div class="result-ineligible-message" id="result-ineligible-message" hidden data-i18n="resultIneligibleByAgeMessage">
+                  For buildings constructed in 1945 or later, the Austrian Tenancy Act (MRG) does not apply.
+                </div>
 
-                <div class="result-grid">
-                  <article class="result-card">
-                    <p data-i18n="resultLegalRentM2Label">Gesetzliche Miete (geschatzt) pro m²</p>
-                    <strong id="result-legal-m2">-</strong>
-                  </article>
-                  <article class="result-card">
-                    <p data-i18n="resultLegalRentTotalLabel">Gesetzliche Miete gesamt (geschatzt)</p>
-                    <strong id="result-legal-total">-</strong>
-                  </article>
-                  <article class="result-card">
-                    <p data-i18n="resultCurrentRentLabel">Ihre aktuelle Nettomiete</p>
-                    <strong id="result-current-rent">-</strong>
-                  </article>
-                  <article class="result-card highlight">
-                    <p data-i18n="resultOverpaymentLabel">Mogliche Uberzahlung pro Monat</p>
+                <div class="result-overview">
+                  <article class="result-hero-card">
+                    <p data-i18n="resultOverpaymentLabel">Mögliche Überzahlung pro Monat</p>
                     <strong id="result-overpayment">-</strong>
                   </article>
-                  <article class="result-card">
-                    <p data-i18n="resultDurationLabel">Berucksichtigte Vertragsdauer</p>
-                    <strong id="result-duration-months">-</strong>
-                  </article>
-                  <article class="result-card highlight">
+                  <article class="result-hero-card is-accent">
                     <p data-i18n="resultRefundLabel">Potenzieller Gewinn (Vertragsdauer)</p>
                     <strong id="result-refund">-</strong>
                   </article>
                 </div>
 
-                <div class="result-summary" id="result-summary"></div>
+                <article class="result-details-card">
+                  <h4 data-i18n="resultBreakdownTitle">So setzt sich die Einschätzung zusammen</h4>
+                  <dl class="result-details-list">
+                    <div class="result-detail-row">
+                      <dt data-i18n="resultCurrentRentLabel">Ihre aktuelle Miete</dt>
+                      <dd id="result-current-rent">-</dd>
+                    </div>
+                    <div class="result-detail-row">
+                      <dt data-i18n="resultLegalRentTotalLabel">Gesetzliche Miete gesamt (geschatzt)</dt>
+                      <dd id="result-legal-total">-</dd>
+                    </div>
+                    <div class="result-detail-row">
+                      <dt data-i18n="resultLegalRentM2Label">Gesetzliche Miete (geschatzt) pro m²</dt>
+                      <dd id="result-legal-m2">-</dd>
+                    </div>
+                    <div class="result-detail-row">
+                      <dt data-i18n="resultDurationLabel">Berücksichtigte Vertragsdauer</dt>
+                      <dd id="result-duration-months">-</dd>
+                    </div>
+                  </dl>
+                </article>
+
                 <p class="disclaimer" data-i18n="disclaimerText">
-                  Dieser Rechner liefert nur eine unverbindliche Schatzung. Die exakte Rechtslage muss durch Rechtsexperten gepruft werden.
+                  Dieser Rechner liefert nur eine unverbindliche Schätzung. Die exakte Rechtslage muss durch Rechtsexperten geprüft werden.
                 </p>
 
                 <div class="lead-box" id="qualified-box" hidden>
                   <h4 class="lead-title" data-i18n="qualifiedTitle">Ihr Fall sieht passend aus.</h4>
-                  <p data-i18n="qualifiedText">Senden Sie jetzt Ihre Daten und Unterlagen fur die juristische Prufung.</p>
-                  <ul class="lead-trust-list">
-                    <li data-i18n="leadTrust1">Vertrauliche Behandlung Ihrer Unterlagen.</li>
-                    <li data-i18n="leadTrust2">Kontakt nur fur die Fallprufung und Folgeschritte.</li>
-                    <li data-i18n="leadTrust3">Transparente Datenverarbeitung gemass Datenschutzerklarung.</li>
-                  </ul>
-                  <p class="lead-cost-note" data-i18n="leadCostNote">
-                    Sie zahlen nur im Erfolgsfall: Unsere Provision wird aus der tatsachlich erreichten Zahlung genommen.
-                  </p>
-
+                  <p data-i18n="qualifiedText">Senden Sie jetzt Ihre Daten und Unterlagen für die juristische Prüfung.</p>
                   <div class="grid-2">
                     <div class="field">
                       <label for="leadName" data-i18n="labelName">Name</label>
@@ -468,26 +474,26 @@
 
                   <label class="checkbox consent">
                     <input id="leadConsent" type="checkbox" />
-                    <span data-i18n="consentText">Ich stimme der Kontaktaufnahme und Verarbeitung meiner Angaben zur Fallprufung zu.</span>
+                    <span data-i18n="consentText">Ich stimme der Kontaktaufnahme und Verarbeitung meiner Angaben zur Fallprüfung zu.</span>
                   </label>
+
+                  <button type="button" id="submit-lead-btn" class="btn btn-primary" data-i18n="submitLeadBtn">Fall einreichen</button>
                   <p class="legal-links-inline">
                     <a href="datenschutz.html" data-i18n="privacyLink">Datenschutz</a>
                     <span>&middot;</span>
                     <a href="impressum.html" data-i18n="imprintLink">Impressum</a>
                   </p>
-
-                  <button type="button" id="submit-lead-btn" class="btn btn-primary" data-i18n="submitLeadBtn">Fall einreichen</button>
                   <p class="lead-feedback" id="lead-feedback"></p>
                 </div>
 
                 <div class="lead-box muted" id="not-qualified-box" hidden>
-                  <h4 class="lead-title" data-i18n="notQualifiedTitle">Aktuell keine klare Uberzahlung erkennbar.</h4>
-                  <p data-i18n="notQualifiedText">Auf Basis dieser Eingaben sammeln wir hier keine Kontaktdaten. Sie konnen mit angepassten Daten erneut prufen.</p>
+                  <h4 class="lead-title" data-i18n="notQualifiedTitle">Aktuell keine klare Überzahlung erkennbar.</h4>
+                  <p data-i18n="notQualifiedText">Auf Basis dieser Eingaben sammeln wir hier keine Kontaktdaten. Sie können mit angepassten Daten erneut prüfen.</p>
                 </div>
               </section>
 
               <div class="form-actions">
-                <button type="button" id="prev-btn" class="btn btn-ghost" data-i18n="btnBack">Zuruck</button>
+                <button type="button" id="prev-btn" class="btn btn-ghost" data-i18n="btnBack">Zurück</button>
                 <button type="button" id="next-btn" class="btn btn-primary" data-i18n="btnNext">Weiter</button>
               </div>
             </form>
@@ -497,46 +503,99 @@
 
       <section class="section" id="trust">
         <div class="container">
-          <h2 data-i18n="trustTitle">Was passiert, wenn Ihre Miete ueber der gesetzlichen Grenze liegt</h2>
+          <h2 data-i18n="trustTitle">Über uns</h2>
           <p class="section-lead" data-i18n="trustLead">
-            Wir starten immer mit der einfachsten und schnellsten Loesung. In vielen Faellen kann frueh eine faire Einigung mit Vermieter oder Hausverwaltung erreicht werden.
+            Wir sind ein mieterfokussierter Rent Check Service für Tirol. Unser Ziel ist es, mögliche Miet-Überzahlungen schnell sichtbar zu machen und den nächsten sinnvollen Schritt klar zu zeigen.
           </p>
 
           <div class="cards cards-3 trust-grid">
             <article class="card">
-              <h3 data-i18n="trustCard1Title">1. Direkte Einigung mit Vermieter</h3>
-              <p data-i18n="trustCard1Text">Wir kontaktieren zuerst Vermieter oder Hausverwaltung, klaeren die Situation direkt und streben eine faire aussergerichtliche Einigung an.</p>
+              <h3 data-i18n="trustCard1Title">Unsere Mission</h3>
+              <p data-i18n="trustCard1Text">Mietrechte sollen für Mieter verständlich und leicht zugänglich sein - ohne unnötige Komplexität.</p>
             </article>
             <article class="card">
-              <h3 data-i18n="trustCard2Title">2. Prufung durch die zustaendige Behoerde</h3>
-              <p data-i18n="trustCard2Text">Wird keine Einigung erreicht, reichen wir den Fall bei der zustaendigen oeffentlichen Stelle ein, die prueft, ob die Miete ueber der gesetzlichen Grenze liegt.</p>
+              <h3 data-i18n="trustCard2Title">So arbeiten wir</h3>
+              <p data-i18n="trustCard2Text">Wir verbinden einen schnellen digitalen Vorab-Check mit einer strukturierten Fallprüfung durch erfahrene Rechtspartner.</p>
             </article>
             <article class="card">
-              <h3 data-i18n="trustCard3Title">3. Gericht nur wenn notwendig</h3>
-              <p data-i18n="trustCard3Text">Bleibt das Thema weiter offen, koennen unsere Rechtspartner den Anspruch gerichtlich durchsetzen, um Ihre Rechte zu schuetzen.</p>
+              <h3 data-i18n="trustCard3Title">Wofür wir stehen</h3>
+              <p data-i18n="trustCard3Text">Klare Kommunikation, realistische Einschätzungen und transparente Begleitung vom ersten Ergebnis bis zur Lösung.</p>
             </article>
           </div>
 
           <div class="trust-panel">
-            <h3 data-i18n="trustPanelTitle">Was das fuer Sie bedeutet</h3>
+            <h3 data-i18n="trustPanelTitle">Was Sie von uns erwarten können</h3>
             <ul class="trust-list">
-              <li data-i18n="trustList1">Wir zielen immer zuerst auf eine schnelle und einvernehmliche Loesung.</li>
-              <li data-i18n="trustList2">Wenn noetig wird der Fall vor einem Gerichtsverfahren von der zustaendigen Behoerde geprueft.</li>
-              <li data-i18n="trustList3">Die Einreichung Ihres Falls und die Ersteinschaetzung sind kostenlos.</li>
-              <li data-i18n="trustList4">Ihre Unterlagen und personenbezogenen Daten werden sicher und vertraulich behandelt.</li>
+              <li data-i18n="trustList1">Eine schnelle Ersteinschätzung in wenigen Minuten.</li>
+              <li data-i18n="trustList2">Eine klare Empfehlung, ob Ihr Fall weiterverfolgt werden sollte.</li>
+              <li data-i18n="trustList3">Sichere und vertrauliche Behandlung Ihrer Unterlagen.</li>
+              <li data-i18n="trustList4">Transparente Updates, damit Sie die nächsten Schritte jederzeit kennen.</li>
             </ul>
             <p class="trust-note" data-i18n="trustNote">
-              Sie zahlen nur, wenn wir erfolgreich Geld fuer Sie zurueckholen - unser Honorar ist ein prozentualer Anteil der Rueckzahlung.
+              Wir übernehmen alle notwendigen Kosten zur Durchsetzung Ihrer Ansprüche. Es macht keinen Unterschied, ob zuerst eine außergerichtliche Einigung erreicht wird oder ob wir Ihre Ansprüche vor Gericht durchsetzen müssen.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section references-section" id="references">
+        <div class="container">
+          <p class="section-lead" data-i18n="referencesLead">What tenants say about us</p>
+
+          <div class="reference-slider">
+            <div class="reference-track" id="reference-track">
+              <article class="reference-card is-active" data-reference-index="0">
+                <p class="reference-quote" data-i18n="reference1Text">
+                  Der Check war schnell und verständlich. Danach wusste ich sofort, wie es weitergeht.
+                </p>
+                <p class="reference-name" data-i18n="reference1Name">Anna K. · Innsbruck</p>
+              </article>
+              <article class="reference-card" data-reference-index="1" hidden>
+                <p class="reference-quote" data-i18n="reference2Text">
+                  Ich konnte meine Daten in wenigen Minuten eingeben und bekam eine klare erste Einschätzung.
+                </p>
+                <p class="reference-name" data-i18n="reference2Name">Markus L. · Innsbruck</p>
+              </article>
+              <article class="reference-card" data-reference-index="2" hidden>
+                <p class="reference-quote" data-i18n="reference3Text">
+                  Die Kommunikation war professionell und ich hatte jederzeit einen guten Überblick über die nächsten Schritte.
+                </p>
+                <p class="reference-name" data-i18n="reference3Name">Sophie R. · Innsbruck</p>
+              </article>
+              <article class="reference-card" data-reference-index="3" hidden>
+                <p class="reference-quote" data-i18n="reference4Text">
+                  Für mich war wichtig, dass ich kein Risiko habe. Der Ablauf war transparent und sehr einfach.
+                </p>
+                <p class="reference-name" data-i18n="reference4Name">Daniela P. · Innsbruck</p>
+              </article>
+              <article class="reference-card" data-reference-index="4" hidden>
+                <p class="reference-quote" data-i18n="reference5Text">
+                  Die Kombination aus Online-Rechner und juristischer Prüfung hat mir viel Zeit gespart.
+                </p>
+                <p class="reference-name" data-i18n="reference5Name">Michael S. · Innsbruck</p>
+              </article>
+            </div>
+
+            <div class="reference-controls">
+              <button id="reference-prev" type="button" class="reference-nav" aria-label="Vorherige Referenz">‹</button>
+              <div class="reference-dots" id="reference-dots">
+                <button type="button" data-reference-dot="0" class="is-active" aria-label="Referenz 1"></button>
+                <button type="button" data-reference-dot="1" aria-label="Referenz 2"></button>
+                <button type="button" data-reference-dot="2" aria-label="Referenz 3"></button>
+                <button type="button" data-reference-dot="3" aria-label="Referenz 4"></button>
+                <button type="button" data-reference-dot="4" aria-label="Referenz 5"></button>
+              </div>
+              <button id="reference-next" type="button" class="reference-nav" aria-label="Nächste Referenz">›</button>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="insights">
         <div class="container">
-          <h2 data-i18n="insightsTitle">Studien und Ratgeber fur Mieter</h2>
+          <h2 data-i18n="insightsTitle">Studien und Ratgeber für Mieter</h2>
           <p class="section-lead" data-i18n="insightsLead">
-            Drei kurze Artikel mit relevanten Hintergrunden zu MRG, Altbau-Kriterien und Durchsetzung.
+            Drei kurze Artikel mit relevanten Hintergründen zu MRG, Altbau-Kriterien und Durchsetzung.
           </p>
 
           <div class="insights-grid">
@@ -551,9 +610,9 @@
               </figure>
               <div class="insight-body">
                 <p class="insight-meta" data-i18n="insight1Meta">MRG Grundlagen</p>
-                <h3 data-i18n="insight1Title">Was ist die MRG-Regelung in Oesterreich?</h3>
+                <h3 data-i18n="insight1Title">Was ist die MRG-Regelung in Österreich?</h3>
                 <p data-i18n="insight1Text">
-                  Verstehen Sie einfach, wie MRG funktioniert, welche Wohnungen oft betroffen sind und warum ein Mietcheck fuer Mieter sinnvoll ist.
+                  Verstehen Sie einfach, wie MRG funktioniert, welche Wohnungen oft betroffen sind und warum ein Mietcheck für Mieter sinnvoll ist.
                 </p>
                 <a class="insight-link" href="blog-rent-cap-basics-de.html" data-insight-id="1" data-i18n="insightReadMore">Artikel lesen</a>
               </div>
@@ -572,7 +631,7 @@
                 <p class="insight-meta" data-i18n="insight2Meta">Praxis-Check</p>
                 <h3 data-i18n="insight2Title">Altbau in Tirol: Wann ist eine Wohnung meist relevant?</h3>
                 <p data-i18n="insight2Text">
-                  Eine einfache Checkliste zu Baujahr, Gebaudestruktur und Vertragsdaten - damit Mieter schneller einschatzen konnen, ob sich eine Prufung lohnt.
+                  Eine einfache Checkliste zu Baujahr, Gebäudestruktur und Vertragsdaten - damit Mieter schneller einschätzen können, ob sich eine Prüfung lohnt.
                 </p>
                 <a class="insight-link" href="blog-altbau-checklist-de.html" data-insight-id="2" data-i18n="insightReadMore">Artikel lesen</a>
               </div>
@@ -589,9 +648,9 @@
               </figure>
               <div class="insight-body">
                 <p class="insight-meta" data-i18n="insight3Meta">Fallstrategie</p>
-                <h3 data-i18n="insight3Title">Aussergerichtlich oder Gericht: Wie Anspruche durchgesetzt werden</h3>
+                <h3 data-i18n="insight3Title">Außergerichtlich oder Gericht: Wie Ansprüche durchgesetzt werden</h3>
                 <p data-i18n="insight3Text">
-                  Was Mieter vom Ablauf erwarten konnen, warum viele Falle ohne Gericht gelost werden und was passiert, wenn ein Verfahren notig wird.
+                  Was Mieter vom Ablauf erwarten können, warum viele Fälle ohne Gericht gelöst werden und was passiert, wenn ein Verfahren nötig wird.
                 </p>
                 <a class="insight-link" href="blog-settlement-vs-court-de.html" data-insight-id="3" data-i18n="insightReadMore">Artikel lesen</a>
               </div>
@@ -602,19 +661,92 @@
 
       <section class="section section-alt" id="faq">
         <div class="container">
-          <h2 data-i18n="faqTitle">Haufige Fragen</h2>
+          <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
           <div class="faq-list">
             <details>
-              <summary data-i18n="faq1Question">Ist das Ergebnis rechtsverbindlich?</summary>
-              <p data-i18n="faq1Answer">Nein. Das Tool ist eine Vorprufung und ersetzt keine juristische Beratung.</p>
+              <summary data-i18n="faq1Question">How do I know if my rent might be too high?</summary>
+              <p data-i18n="faq1Answer">
+                Many apartments in older buildings are subject to legal rent limits. If your rent exceeds the legally
+                permitted amount, it may be possible to reduce it. We review your contract and apartment details to
+                determine whether your rent is within the allowed range.
+              </p>
             </details>
             <details>
-              <summary data-i18n="faq2Question">Welche Wohnungen sind besonders relevant?</summary>
-              <p data-i18n="faq2Answer">Typisch sind Altbau-Objekte mit voller MRG-Regulierung, oft Baujahr vor ca. 1953.</p>
+              <summary data-i18n="faq2Question">Which apartments are usually eligible for a rent reduction?</summary>
+              <p data-i18n="faq2Answer">
+                Rent reviews most commonly apply to apartments in buildings constructed before 1945. These buildings
+                are typically subject to rent limits under the Austrian Mietrechtsgesetz (MRG). If your apartment is
+                located in such a building, your rent may be regulated and could potentially exceed the legally
+                permitted amount. We review the details of your apartment and contract to determine whether these rules
+                apply.
+              </p>
             </details>
             <details>
-              <summary data-i18n="faq3Question">Warum zuerst das Ergebnis und dann Kontakt?</summary>
-              <p data-i18n="faq3Answer">Damit nur passende Falle an das juristische Team weitergegeben werden.</p>
+              <summary data-i18n="faq3Question">What information do you need to review my rent?</summary>
+              <p data-i18n="faq3AnswerIntro">Typically we only need a few basic details, such as:</p>
+              <ul class="faq-bullets">
+                <li data-i18n="faq3AnswerBullet1">your rent amount</li>
+                <li data-i18n="faq3AnswerBullet2">the address of the apartment</li>
+                <li data-i18n="faq3AnswerBullet3">the size of the apartment</li>
+                <li data-i18n="faq3AnswerBullet4">your rental contract</li>
+              </ul>
+              <p data-i18n="faq3AnswerOutro">
+                With this information we can usually determine whether a deeper legal review makes sense.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq4Question">How long does the process take?</summary>
+              <p data-i18n="faq4Answer">
+                An initial review usually only takes a short time once we receive the necessary information. If a case
+                proceeds further, the overall process can take several weeks or months depending on the complexity and
+                whether a settlement with the landlord can be reached quickly.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq5Question">What happens if my rent is actually too high?</summary>
+              <p data-i18n="faq5Answer">
+                If the review shows that the rent exceeds the legal limit, the case can be pursued to adjust the rent.
+                In successful cases, the rent is corrected to the legally permitted level and previously overpaid rent
+                may be refunded.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq6Question">Do I have to pay anything upfront?</summary>
+              <p data-i18n="faq6Answer">
+                No. The review and case handling are structured so that there is no upfront cost for you. A fee is
+                only charged if the process leads to a successful outcome.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq7Question">Can my landlord terminate my contract because of this?</summary>
+              <p data-i18n="faq7Answer">
+                No. Challenging the legality of a rent level is not a valid reason for termination. Landlords can only
+                terminate a tenancy under specific legal conditions defined by law.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq8Question">Can I still check my rent if I have already moved out?</summary>
+              <p data-i18n="faq8Answer">
+                Yes. In many cases you can still review your rent for up to six months after your rental contract has
+                ended. If the rent you paid exceeded the legal limit, it may still be possible to claim a refund for
+                the overpaid amount during this period.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq9Question">How much could my rent be reduced?</summary>
+              <p data-i18n="faq9Answer">
+                This depends on several factors such as the size of the apartment, its location, and the legal rent
+                category. In some cases tenants receive refunds for past overpayments and also benefit from a lower
+                rent going forward.
+              </p>
+            </details>
+            <details>
+              <summary data-i18n="faq10Question">What happens after I submit my case?</summary>
+              <p data-i18n="faq10Answer">
+                First we check whether the rent level appears legally compliant. If there are indications that the rent
+                is too high, the case can move forward with a detailed review and, if appropriate, communication with
+                the landlord or further legal steps.
+              </p>
             </details>
           </div>
         </div>
@@ -625,7 +757,7 @@
       <div class="container footer-inner">
         <div>
           <p data-i18n="brandName">Check your Rent</p>
-          <p data-i18n="footerDisclaimer">Ersteinschatzung fur Mietthemen in Innsbruck und Tirol. Keine Rechtsberatung.</p>
+          <p data-i18n="footerDisclaimer">Ersteinschätzung für Mietthemen in Innsbruck und Tirol. Keine Rechtsberatung.</p>
         </div>
         <div>
           <p data-i18n="footerCompanyName">Betreiber: [Firmenname GmbH]</p>
