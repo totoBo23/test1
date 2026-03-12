@@ -718,67 +718,6 @@ h2::after {
   font-size: 0.9rem;
 }
 
-.manual-toggle-btn {
-  margin-top: 8px;
-  border: 0;
-  background: transparent;
-  color: var(--color-primary);
-  font: inherit;
-  font-size: 0.9rem;
-  font-weight: 650;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  cursor: pointer;
-  padding: 0;
-  width: fit-content;
-}
-
-.manual-grid {
-  margin-top: 4px;
-}
-
-.address-autocomplete-host gmp-place-autocomplete {
-  display: block;
-  width: 100%;
-}
-
-.pac-container {
-  z-index: 9999 !important;
-  border-radius: 10px;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  font-family: var(--font-body);
-}
-
-.address-status {
-  margin: 0;
-  padding: 10px 12px;
-  border-left: 3px solid var(--color-danger);
-  border-radius: 8px;
-  background: #fff1f1;
-  color: #7f2428;
-}
-
-.address-preview {
-  margin-top: 4px;
-  border: 1px dashed var(--color-border);
-  border-radius: var(--radius-sm);
-  background: #fffaf4;
-  padding: 12px;
-}
-
-.address-preview-title {
-  margin: 0;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-#address-preview-line {
-  margin: 4px 0 0;
-  color: var(--color-muted);
-  font-size: 0.95rem;
-}
-
 .field-full {
   grid-column: 1 / -1;
 }
