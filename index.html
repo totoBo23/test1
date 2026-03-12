@@ -175,7 +175,7 @@
               <ol class="step-indicators" id="step-indicators">
                 <li class="is-current">
                   <span class="step-badge">1</span>
-                  <span class="step-label" data-i18n="stepNav1">Adresse</span>
+                  <span class="step-label" data-i18n="stepNav1">Region</span>
                 </li>
                 <li>
                   <span class="step-badge">2</span>
@@ -198,73 +198,24 @@
 
             <form id="mrg-form" novalidate>
               <section class="form-step is-active" data-step="1">
-                <h3 data-i18n="step1Title">Schritt 1: Adresse</h3>
+                <h3 data-i18n="step1Title">Schritt 1: Bundesland</h3>
                 <div class="grid-2">
                   <div class="field field-full">
-                    <label data-i18n="labelAddressSearch">Adresse</label>
-                    <div id="addressAutocompleteHost" class="address-autocomplete-host" hidden></div>
-                    <input
-                      id="addressSearch"
-                      name="address_search"
-                      type="text"
-                      required
-                      autocomplete="off"
-                      data-i18n-placeholder="placeholderAddressSearch"
-                      placeholder="z.B. Museumstrasse 12, Innsbruck"
-                    />
-                    <p class="field-help" data-i18n="addressHelp">Starten Sie mit der Eingabe und wählen Sie eine Adresse aus der Liste.</p>
-                    <button type="button" class="manual-toggle-btn" id="manual-address-toggle" data-i18n="manualAddressToggle">
-                      Adresse manuell eingeben
-                    </button>
-                  </div>
-                  <div class="field field-full">
-                    <p class="address-status" id="address-api-status" hidden></p>
-                  </div>
-                  <div class="field field-full" id="manual-address-fields" hidden>
-                    <div class="grid-2 manual-grid">
-                      <div class="field">
-                        <label for="manualStreet" data-i18n="labelStreet">Straße</label>
-                        <input id="manualStreet" type="text" data-i18n-placeholder="placeholderStreet" placeholder="z.B. Museumstrasse" />
-                      </div>
-                      <div class="field">
-                        <label for="manualHouseNumber" data-i18n="labelHouseNumber">Hausnummer</label>
-                        <input id="manualHouseNumber" type="text" data-i18n-placeholder="placeholderHouseNumber" placeholder="z.B. 12" />
-                      </div>
-                      <div class="field">
-                        <label for="manualPostalCode" data-i18n="labelPostalCode">Postleitzahl</label>
-                        <input id="manualPostalCode" type="text" inputmode="numeric" data-i18n-placeholder="placeholderPostalCode" placeholder="z.B. 6020" />
-                      </div>
-                      <div class="field">
-                        <label for="manualCity" data-i18n="labelCity">Stadt</label>
-                        <input id="manualCity" type="text" data-i18n-placeholder="placeholderCity" placeholder="z.B. Innsbruck" />
-                      </div>
-                      <div class="field field-full">
-                        <label for="manualState" data-i18n="labelState">Bundesland</label>
-                        <select id="manualState">
-                          <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                          <option value="Tirol" data-i18n="stateTirol">Tirol</option>
-                          <option value="Vienna" data-i18n="stateVienna">Wien</option>
-                          <option value="Salzburg" data-i18n="stateSalzburg">Salzburg</option>
-                          <option value="Upper Austria" data-i18n="stateUpperAustria">Oberösterreich</option>
-                          <option value="Lower Austria" data-i18n="stateLowerAustria">Niederösterreich</option>
-                          <option value="Styria" data-i18n="stateStyria">Steiermark</option>
-                          <option value="Carinthia" data-i18n="stateCarinthia">Kärnten</option>
-                          <option value="Vorarlberg" data-i18n="stateVorarlberg">Vorarlberg</option>
-                          <option value="Burgenland" data-i18n="stateBurgenland">Burgenland</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="field field-full address-preview" id="address-preview" hidden>
-                    <p class="address-preview-title" data-i18n="addressDetected">Erkannte Adresse</p>
-                    <p id="address-preview-line"></p>
+                    <label for="state" data-i18n="labelState">Bundesland</label>
+                    <select id="state" name="state" required>
+                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
+                      <option value="Tirol" data-i18n="stateTirol">Tirol</option>
+                      <option value="Vienna" data-i18n="stateVienna">Wien</option>
+                      <option value="Salzburg" data-i18n="stateSalzburg">Salzburg</option>
+                      <option value="Upper Austria" data-i18n="stateUpperAustria">Oberösterreich</option>
+                      <option value="Lower Austria" data-i18n="stateLowerAustria">Niederösterreich</option>
+                      <option value="Styria" data-i18n="stateStyria">Steiermark</option>
+                      <option value="Carinthia" data-i18n="stateCarinthia">Kärnten</option>
+                      <option value="Vorarlberg" data-i18n="stateVorarlberg">Vorarlberg</option>
+                      <option value="Burgenland" data-i18n="stateBurgenland">Burgenland</option>
+                    </select>
                   </div>
                 </div>
-                <input id="street" name="street" type="hidden" />
-                <input id="houseNumber" name="house_number" type="hidden" />
-                <input id="postalCode" name="postal_code" type="hidden" />
-                <input id="city" name="city" type="hidden" />
-                <input id="state" name="state" type="hidden" />
               </section>
 
               <section class="form-step" data-step="2">
@@ -771,7 +722,6 @@
       </div>
     </footer>
 
-    <script src="assets/js/config.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
