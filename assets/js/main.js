@@ -84,8 +84,8 @@ const translations = {
     calcTitle: "Berechnen Sie selbst, ob Ihre Miete über der zulässigen Grenze liegt",
     calcLead: "Mit wenigen Angaben sehen Sie, wie viel Sie möglicherweise zu viel gezahlt haben.",
 
-    step1Title: "Schritt 1: Adresse",
-    stepNav1: "Adresse",
+    step1Title: "Schritt 1: Bundesland",
+    stepNav1: "Region",
     stepNav2: "Gebäude",
     stepNav3: "Miete",
     stepNav4: "Merkmale",
@@ -401,8 +401,8 @@ const translations = {
     calcTitle: "Calculate if your rent is above the allowed limit",
     calcLead: "With a few inputs, see how much you may have overpaid.",
 
-    step1Title: "Step 1: Address",
-    stepNav1: "Address",
+    step1Title: "Step 1: Region",
+    stepNav1: "Region",
     stepNav2: "Building",
     stepNav3: "Rent",
     stepNav4: "Features",
@@ -644,38 +644,6 @@ const richtwertByState = {
   Burgenland: 6.09
 };
 
-const stateLabelByKey = {
-  Vienna: "stateVienna",
-  Tirol: "stateTirol",
-  Salzburg: "stateSalzburg",
-  "Upper Austria": "stateUpperAustria",
-  "Lower Austria": "stateLowerAustria",
-  Styria: "stateStyria",
-  Carinthia: "stateCarinthia",
-  Vorarlberg: "stateVorarlberg",
-  Burgenland: "stateBurgenland"
-};
-
-const stateAliases = {
-  wien: "Vienna",
-  vienna: "Vienna",
-  tirol: "Tirol",
-  tyrol: "Tirol",
-  salzburg: "Salzburg",
-  oberosterreich: "Upper Austria",
-  "upper austria": "Upper Austria",
-  niederoesterreich: "Lower Austria",
-  niederosterreich: "Lower Austria",
-  "lower austria": "Lower Austria",
-  steiermark: "Styria",
-  styria: "Styria",
-  kaernten: "Carinthia",
-  karnten: "Carinthia",
-  carinthia: "Carinthia",
-  vorarlberg: "Vorarlberg",
-  burgenland: "Burgenland"
-};
-
 const adjustments = {
   floor_level: {
     ground_floor: -0.5,
@@ -715,11 +683,6 @@ const totalSteps = 5;
 let currentStep = 1;
 let currentLang = "de";
 let lastResult = null;
-let addressSelectedFromSuggestion = false;
-let parsedAddressPreview = null;
-let manualAddressMode = false;
-let placeAutocompleteElement = null;
-let usingNewPlaceAutocomplete = false;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let heroCountersAnimated = false;
 let heroCounterObserver = null;
@@ -731,27 +694,6 @@ const progressFill = document.getElementById("progress-fill");
 const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
 const buildingAgeNotice = document.getElementById("building-age-notice");
-const addressFields = {
-  autocompleteHost: document.getElementById("addressAutocompleteHost"),
-  search: document.getElementById("addressSearch"),
-  street: document.getElementById("street"),
-  houseNumber: document.getElementById("houseNumber"),
-  postalCode: document.getElementById("postalCode"),
-  city: document.getElementById("city"),
-  state: document.getElementById("state"),
-  status: document.getElementById("address-api-status"),
-  preview: document.getElementById("address-preview"),
-  previewLine: document.getElementById("address-preview-line")
-};
-const manualAddress = {
-  toggle: document.getElementById("manual-address-toggle"),
-  wrapper: document.getElementById("manual-address-fields"),
-  street: document.getElementById("manualStreet"),
-  houseNumber: document.getElementById("manualHouseNumber"),
-  postalCode: document.getElementById("manualPostalCode"),
-  city: document.getElementById("manualCity"),
-  state: document.getElementById("manualState")
-};
 
 const qualifiedBox = document.getElementById("qualified-box");
 const notQualifiedBox = document.getElementById("not-qualified-box");
@@ -1104,382 +1046,6 @@ function calculateContractMonths(startDate, endDate) {
   return Math.max(1, Math.ceil(dayDiff / 30.4375));
 }
 
-function normalizeStateName(value) {
-  if (!value) {
-    return "";
-  }
-
-  const normalized = value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim();
-
-  return stateAliases[normalized] || "";
-}
-
-function getStateLabel(stateKey) {
-  const translationKey = stateLabelByKey[stateKey];
-  return translationKey ? t(translationKey) : stateKey;
-}
-
-function clearResolvedAddress() {
-  addressFields.street.value = "";
-  addressFields.houseNumber.value = "";
-  addressFields.postalCode.value = "";
-  addressFields.city.value = "";
-  addressFields.state.value = "";
-  parsedAddressPreview = null;
-  addressSelectedFromSuggestion = false;
-  addressFields.preview.hidden = true;
-  addressFields.previewLine.textContent = "";
-}
-
-function clearManualAddressFields() {
-  manualAddress.street.value = "";
-  manualAddress.houseNumber.value = "";
-  manualAddress.postalCode.value = "";
-  manualAddress.city.value = "";
-  manualAddress.state.value = "";
-}
-
-function updateAutocompleteVisibility() {
-  if (usingNewPlaceAutocomplete) {
-    addressFields.autocompleteHost.hidden = manualAddressMode;
-    addressFields.search.hidden = true;
-    addressFields.search.disabled = true;
-    addressFields.search.required = false;
-    return;
-  }
-
-  addressFields.autocompleteHost.hidden = true;
-  addressFields.search.hidden = false;
-  addressFields.search.disabled = manualAddressMode;
-  addressFields.search.required = !manualAddressMode;
-}
-
-function setManualAddressMode(enabled) {
-  manualAddressMode = enabled;
-  manualAddress.wrapper.hidden = !enabled;
-  updateAutocompleteVisibility();
-  addressFields.search.setCustomValidity("");
-
-  if (enabled) {
-    clearResolvedAddress();
-    setAddressStatus("");
-  } else {
-    clearManualAddressFields();
-  }
-
-  manualAddress.toggle.textContent = enabled ? t("manualAddressUseAutocomplete") : t("manualAddressToggle");
-}
-
-function applyManualAddressToHidden() {
-  const street = manualAddress.street.value.trim();
-  const houseNumber = manualAddress.houseNumber.value.trim();
-  const postalCodeRaw = manualAddress.postalCode.value.trim();
-  const postalCodeMatch = postalCodeRaw.match(/\d{4,5}/);
-  const postalCode = postalCodeMatch ? postalCodeMatch[0] : "";
-  const city = manualAddress.city.value.trim();
-  const state = manualAddress.state.value;
-
-  if (!street || !houseNumber || !postalCode || !city || !state) {
-    return false;
-  }
-
-  addressFields.street.value = street;
-  addressFields.houseNumber.value = houseNumber;
-  addressFields.postalCode.value = postalCode;
-  addressFields.city.value = city;
-  addressFields.state.value = state;
-
-  parsedAddressPreview = { street, houseNumber, postalCode, city, state };
-  renderAddressPreview(parsedAddressPreview);
-  return true;
-}
-
-function setAddressStatus(messageKey = "") {
-  if (!messageKey) {
-    addressFields.status.hidden = true;
-    addressFields.status.textContent = "";
-    delete addressFields.status.dataset.messageKey;
-    return;
-  }
-
-  addressFields.status.dataset.messageKey = messageKey;
-  addressFields.status.hidden = false;
-  addressFields.status.textContent = t(messageKey);
-}
-
-function renderAddressPreview(parsed) {
-  if (!parsed) {
-    addressFields.preview.hidden = true;
-    addressFields.previewLine.textContent = "";
-    return;
-  }
-
-  const lineParts = [
-    [parsed.street, parsed.houseNumber].filter(Boolean).join(" ").trim(),
-    [parsed.postalCode, parsed.city].filter(Boolean).join(" ").trim(),
-    getStateLabel(parsed.state)
-  ].filter(Boolean);
-
-  addressFields.previewLine.textContent = lineParts.join(", ");
-  addressFields.preview.hidden = false;
-}
-
-function isAutocompleteAddressComplete(parsed) {
-  return Boolean(parsed.street && parsed.postalCode && parsed.city && parsed.state);
-}
-
-function applyResolvedAddress(parsed, formattedAddress = "") {
-  addressFields.street.value = parsed.street;
-  addressFields.houseNumber.value = parsed.houseNumber;
-  addressFields.postalCode.value = parsed.postalCode;
-  addressFields.city.value = parsed.city;
-  addressFields.state.value = parsed.state;
-  parsedAddressPreview = parsed;
-  addressSelectedFromSuggestion = true;
-  setAddressStatus("");
-
-  const fallbackAddress = [
-    [parsed.street, parsed.houseNumber].filter(Boolean).join(" ").trim(),
-    [parsed.postalCode, parsed.city].filter(Boolean).join(" ").trim()
-  ]
-    .filter(Boolean)
-    .join(", ");
-
-  addressFields.search.value = formattedAddress || fallbackAddress;
-  renderAddressPreview(parsedAddressPreview);
-}
-
-function parseAddressComponents(components) {
-  const parsed = {
-    street: "",
-    houseNumber: "",
-    postalCode: "",
-    city: "",
-    state: ""
-  };
-
-  components.forEach((component) => {
-    const types = Array.isArray(component.types) ? component.types : [];
-    const longName = component.long_name || component.longText || "";
-    const shortName = component.short_name || component.shortText || "";
-
-    if (types.includes("route")) {
-      parsed.street = longName;
-    }
-    if (types.includes("street_number")) {
-      parsed.houseNumber = longName;
-    }
-    if (types.includes("postal_code")) {
-      parsed.postalCode = longName;
-    }
-    if (types.includes("locality")) {
-      parsed.city = longName;
-    }
-    if (!parsed.city && types.includes("postal_town")) {
-      parsed.city = longName;
-    }
-    if (types.includes("administrative_area_level_1")) {
-      parsed.state = normalizeStateName(longName) || normalizeStateName(shortName);
-    }
-  });
-
-  return parsed;
-}
-
-function loadGoogleMapsPlacesApi() {
-  const apiKey = window.MRG_CONFIG?.googleMapsApiKey?.trim();
-
-  if (!apiKey) {
-    return Promise.reject(new Error("missing_api_key"));
-  }
-
-  if (window.google?.maps?.importLibrary) {
-    return window.google.maps.importLibrary("places");
-  }
-
-  if (window.__mrgGoogleMapsLoaderPromise) {
-    return window.__mrgGoogleMapsLoaderPromise;
-  }
-
-  window.__mrgGoogleMapsLoaderPromise = new Promise((resolve, reject) => {
-    const g = {
-      key: apiKey,
-      v: "weekly",
-      language: currentLang === "de" ? "de" : "en"
-    };
-    const p = "The Google Maps JavaScript API";
-    const c = "google";
-    const l = "importLibrary";
-    const q = "__ib__";
-    const m = document;
-    let b = window;
-    b = b[c] || (b[c] = {});
-    const d = b.maps || (b.maps = {});
-    const r = new Set();
-    const e = new URLSearchParams();
-    let h = null;
-
-    const u = () =>
-      h ||
-      (h = new Promise((bootstrapResolve, bootstrapReject) => {
-        const script = m.createElement("script");
-        e.set("libraries", [...r].join(","));
-        Object.keys(g).forEach((key) => {
-          e.set(key.replace(/[A-Z]/g, (t) => `_${t[0].toLowerCase()}`), g[key]);
-        });
-        e.set("callback", `${c}.maps.${q}`);
-        script.src = `https://maps.${c}apis.com/maps/api/js?${e.toString()}`;
-        script.async = true;
-        script.defer = true;
-        script.dataset.googleMaps = "places";
-        d[q] = bootstrapResolve;
-        script.onerror = () => bootstrapReject(new Error(`${p} could not load.`));
-        m.head.appendChild(script);
-      }));
-
-    if (d[l]) {
-      d[l]("places").then(resolve).catch(reject);
-      return;
-    }
-
-    d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n));
-    d[l]("places").then(resolve).catch(reject);
-  });
-
-  return window.__mrgGoogleMapsLoaderPromise;
-}
-
-async function handlePlaceAutocompleteSelection(event) {
-  const placePrediction = event?.placePrediction || event?.detail?.placePrediction;
-
-  if (!placePrediction || typeof placePrediction.toPlace !== "function") {
-    clearResolvedAddress();
-    setAddressStatus("addressSelectSuggestionError");
-    return;
-  }
-
-  try {
-    const place = placePrediction.toPlace();
-    await place.fetchFields({ fields: ["addressComponents", "formattedAddress"] });
-
-    const components = place?.addressComponents || [];
-    if (!components.length) {
-      clearResolvedAddress();
-      setAddressStatus("addressSelectSuggestionError");
-      return;
-    }
-
-    const parsed = parseAddressComponents(components);
-    if (!isAutocompleteAddressComplete(parsed)) {
-      clearResolvedAddress();
-      setAddressStatus("addressIncompleteError");
-      return;
-    }
-
-    applyResolvedAddress(parsed, place.formattedAddress || "");
-  } catch (_error) {
-    clearResolvedAddress();
-    setAddressStatus("addressApiError");
-  }
-}
-
-function initializeLegacyAddressAutocomplete() {
-  if (!google?.maps?.places?.Autocomplete) {
-    throw new Error("legacy_autocomplete_unavailable");
-  }
-
-  const autocomplete = new google.maps.places.Autocomplete(addressFields.search, {
-    componentRestrictions: { country: "at" },
-    fields: ["address_components", "formatted_address", "name"],
-    types: ["address"]
-  });
-
-  usingNewPlaceAutocomplete = false;
-  updateAutocompleteVisibility();
-
-  addressFields.search.addEventListener("input", () => {
-    addressFields.search.setCustomValidity("");
-    clearResolvedAddress();
-  });
-
-  autocomplete.addListener("place_changed", () => {
-    const place = autocomplete.getPlace();
-    const components = place?.address_components || [];
-
-    if (!components.length) {
-      clearResolvedAddress();
-      setAddressStatus("addressSelectSuggestionError");
-      return;
-    }
-
-    const parsed = parseAddressComponents(components);
-    if (!isAutocompleteAddressComplete(parsed)) {
-      clearResolvedAddress();
-      setAddressStatus("addressIncompleteError");
-      return;
-    }
-
-    applyResolvedAddress(parsed, place.formatted_address || "");
-  });
-}
-
-function initializePlaceAutocompleteElement(placeAutocompleteCtor = null) {
-  const PlaceAutocompleteElement = placeAutocompleteCtor || google?.maps?.places?.PlaceAutocompleteElement;
-  if (!PlaceAutocompleteElement || !addressFields.autocompleteHost) {
-    return false;
-  }
-
-  addressFields.autocompleteHost.innerHTML = "";
-  placeAutocompleteElement = new PlaceAutocompleteElement({
-    includedRegionCodes: ["at"]
-  });
-
-  if ("requestedLanguage" in placeAutocompleteElement) {
-    placeAutocompleteElement.requestedLanguage = currentLang === "de" ? "de" : "en";
-  }
-  if ("placeholder" in placeAutocompleteElement) {
-    placeAutocompleteElement.placeholder = t("placeholderAddressSearch");
-  }
-
-  placeAutocompleteElement.addEventListener("input", () => {
-    clearResolvedAddress();
-    setAddressStatus("");
-  });
-  placeAutocompleteElement.addEventListener("gmp-select", handlePlaceAutocompleteSelection);
-  placeAutocompleteElement.addEventListener("gmp-placeselect", handlePlaceAutocompleteSelection);
-  placeAutocompleteElement.addEventListener("gmp-error", (event) => {
-    console.error("PlaceAutocompleteElement error:", event);
-    setAddressStatus("addressApiError");
-  });
-
-  addressFields.autocompleteHost.appendChild(placeAutocompleteElement);
-  usingNewPlaceAutocomplete = true;
-  updateAutocompleteVisibility();
-  return true;
-}
-
-async function initializeAddressAutocomplete() {
-  try {
-    const placesLibrary = await loadGoogleMapsPlacesApi();
-
-    const initializedNewWidget = initializePlaceAutocompleteElement(placesLibrary?.PlaceAutocompleteElement);
-    if (!initializedNewWidget) {
-      if (google?.maps?.places?.Autocomplete) {
-        initializeLegacyAddressAutocomplete();
-      } else {
-        throw new Error("no_supported_autocomplete_api");
-      }
-    }
-  } catch (error) {
-    console.error("Address autocomplete initialization failed:", error);
-    setAddressStatus("addressApiError");
-  }
-}
-
 function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -1511,19 +1077,6 @@ function setLanguage(lang) {
 
   updateNavigationButtons();
   updateBuildingAgeNotice();
-  if (parsedAddressPreview) {
-    renderAddressPreview(parsedAddressPreview);
-  }
-  if (addressFields.status.dataset.messageKey) {
-    setAddressStatus(addressFields.status.dataset.messageKey);
-  }
-  manualAddress.toggle.textContent = manualAddressMode ? t("manualAddressUseAutocomplete") : t("manualAddressToggle");
-  if (placeAutocompleteElement && "requestedLanguage" in placeAutocompleteElement) {
-    placeAutocompleteElement.requestedLanguage = currentLang === "de" ? "de" : "en";
-  }
-  if (placeAutocompleteElement && "placeholder" in placeAutocompleteElement) {
-    placeAutocompleteElement.placeholder = t("placeholderAddressSearch");
-  }
 
   if (lastResult) {
     renderResult(lastResult);
@@ -1588,46 +1141,6 @@ function validateStep(step) {
   if (firstInvalid) {
     firstInvalid.reportValidity();
     return false;
-  }
-
-  if (step === 1) {
-    if (manualAddressMode) {
-      let firstManualInvalid = null;
-      [manualAddress.street, manualAddress.houseNumber, manualAddress.postalCode, manualAddress.city, manualAddress.state].forEach((field) => {
-        field.removeAttribute("aria-invalid");
-        field.setCustomValidity("");
-        if (!field.value.trim()) {
-          field.setAttribute("aria-invalid", "true");
-          field.setCustomValidity(t("addressIncompleteError"));
-          if (!firstManualInvalid) {
-            firstManualInvalid = field;
-          }
-        }
-      });
-
-      if (firstManualInvalid) {
-        firstManualInvalid.reportValidity();
-        return false;
-      }
-
-      if (!applyManualAddressToHidden()) {
-        return false;
-      }
-    } else {
-      const searchField = addressFields.search;
-      searchField.setCustomValidity("");
-
-      if (!addressSelectedFromSuggestion || !addressFields.state.value) {
-        if (usingNewPlaceAutocomplete) {
-          setAddressStatus("addressSelectSuggestionError");
-        } else {
-          searchField.setAttribute("aria-invalid", "true");
-          searchField.setCustomValidity(t("addressSelectSuggestionError"));
-          searchField.reportValidity();
-        }
-        return false;
-      }
-    }
   }
 
   if (step === 3 && Number(numberFields.size.value) <= 0) {
@@ -1869,14 +1382,6 @@ function resetJourney() {
   qualifiedBox.hidden = true;
   notQualifiedBox.hidden = true;
   leadFeedback.textContent = "";
-  addressFields.search.value = "";
-  addressFields.search.setCustomValidity("");
-  if (placeAutocompleteElement && "value" in placeAutocompleteElement) {
-    placeAutocompleteElement.value = "";
-  }
-  clearResolvedAddress();
-  setAddressStatus("");
-  setManualAddressMode(false);
   syncContractEndField();
 
   updateBuildingAgeNotice();
@@ -1953,10 +1458,6 @@ contractFields.stillRunning.addEventListener("change", syncContractEndField);
 contractFields.start.addEventListener("input", () => contractFields.start.setCustomValidity(""));
 contractFields.end.addEventListener("input", () => contractFields.end.setCustomValidity(""));
 
-manualAddress.toggle.addEventListener("click", () => {
-  setManualAddressMode(!manualAddressMode);
-});
-
 document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     setLanguage(btn.dataset.lang);
@@ -1971,7 +1472,6 @@ if (processStep1Cta) {
 
 form.addEventListener("submit", (event) => event.preventDefault());
 
-setManualAddressMode(false);
 syncContractEndField();
 initializeHeroCounterObserver();
 initializeScrollReveal();
@@ -1980,4 +1480,3 @@ startHeroCityRotation();
 initializeReferenceSlider();
 showStep(1);
 updateBuildingAgeNotice();
-initializeAddressAutocomplete();
