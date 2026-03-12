@@ -1228,6 +1228,10 @@ function renderAddressPreview(parsed) {
   addressFields.preview.hidden = false;
 }
 
+function isAutocompleteAddressComplete(parsed) {
+  return Boolean(parsed.street && parsed.postalCode && parsed.city && parsed.state);
+}
+
 function applyResolvedAddress(parsed, formattedAddress = "") {
   addressFields.street.value = parsed.street;
   addressFields.houseNumber.value = parsed.houseNumber;
@@ -1238,8 +1242,14 @@ function applyResolvedAddress(parsed, formattedAddress = "") {
   addressSelectedFromSuggestion = true;
   setAddressStatus("");
 
-  addressFields.search.value =
-    formattedAddress || `${parsed.street} ${parsed.houseNumber}, ${parsed.postalCode} ${parsed.city}`;
+  const fallbackAddress = [
+    [parsed.street, parsed.houseNumber].filter(Boolean).join(" ").trim(),
+    [parsed.postalCode, parsed.city].filter(Boolean).join(" ").trim()
+  ]
+    .filter(Boolean)
+    .join(", ");
+
+  addressFields.search.value = formattedAddress || fallbackAddress;
   renderAddressPreview(parsedAddressPreview);
 }
 
@@ -1364,7 +1374,7 @@ async function handlePlaceAutocompleteSelection(event) {
     }
 
     const parsed = parseAddressComponents(components);
-    if (!parsed.street || !parsed.houseNumber || !parsed.postalCode || !parsed.city || !parsed.state) {
+    if (!isAutocompleteAddressComplete(parsed)) {
       clearResolvedAddress();
       setAddressStatus("addressIncompleteError");
       return;
@@ -1407,7 +1417,7 @@ function initializeLegacyAddressAutocomplete() {
     }
 
     const parsed = parseAddressComponents(components);
-    if (!parsed.street || !parsed.houseNumber || !parsed.postalCode || !parsed.city || !parsed.state) {
+    if (!isAutocompleteAddressComplete(parsed)) {
       clearResolvedAddress();
       setAddressStatus("addressIncompleteError");
       return;
