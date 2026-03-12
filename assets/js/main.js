@@ -1,102 +1,106 @@
 const translations = {
   de: {
     brandName: "Check your Rent",
-    navCalculator: "Rechner",
+    navCalculator: "Rent Calculator",
+    navAbout: "About Us",
     navHow: "Ablauf",
     navTrust: "Vertrauen",
     navFaq: "FAQ",
-    heroEyebrow: "Mietcheck fur Innsbruck und Tirol",
-    heroTitlePrefix: "Prufen Sie schnell, ob Ihre Miete in ",
+    navContact: "Kontakt",
+    heroEyebrow: "Mietcheck für Innsbruck und Tirol",
+    heroTitlePrefix: "Prüfen Sie schnell, ob Ihre Miete in ",
     heroTitleSuffix: " zu hoch ist.",
     heroSubtitle:
-      "In wenigen Minuten erhalten Sie eine Ersteinschatzung zu gesetzlicher Miete, moglicher Uberzahlung und potenzieller Ruckforderung.",
+      "In wenigen Minuten erhalten Sie eine Ersteinschätzung zu gesetzlicher Miete, möglicher Überzahlung und potenzieller Rückforderung.",
     heroCtaPrimary: "Mietcheck starten",
     heroCtaSecondary: "Schritte ansehen",
     badge1: "Fokus: Innsbruck",
-    badge2: "Kostenlose Ersteinschatzung",
-    badge3: "Schnell auf Mobilgeraten",
+    badge2: "Kostenlose Ersteinschätzung",
+    badge3: "Schnell auf Mobilgeräten",
     heroMetric1Value: "1 Min",
-    heroMetric1Label: "bis zur Ersteinschatzung",
+    heroMetric1Label: "bis zur Ersteinschätzung",
     heroMetric2Value: "36 Monate",
     heroMetric2Label: "potenzieller Erstattungszeitraum",
-    heroMetric3Value: "100%",
-    heroMetric3Label: "kostenlos",
+    heroMetric3Value: "Risikofrei",
+    heroMetric3Label: "ohne Vorabkosten",
     heroTrustEyebrow: "Innsbruck im Fokus",
     heroTrustTitle: "Lokal in Tirol verankert, digital schnell erreichbar.",
     heroTrustText:
-      "Sie starten online in Minuten und erhalten bei qualifizierten Fallen eine personliche juristische Einordnung.",
+      "Sie starten online in Minuten und erhalten bei qualifizierten Fällen eine persönliche juristische Einordnung.",
     heroImageLabel: "Innsbruck, Tirol",
 
     howTitle: "So laufen die Schritte ab",
     howLead: "Klarer Ablauf in vier einfachen Schritten.",
     howBenefit:
-      "Sie reichen Ihren Fall ein, wir pruefen Miete und Vertrag und sagen Ihnen klar, ob eine Rueckforderung realistisch ist. Wenn sich eine Ueberzahlung zeigt, uebernehmen wir die Kommunikation mit Vermieter oder Hausverwaltung und versuchen zuerst eine Einigung. Nur wenn noetig gehen wir ueber weitere offizielle Schritte bis zum Gericht. In den meisten Faellen wird vorher eine Loesung erreicht.",
+      "Nach Ihrem kostenlosen Mietcheck melden wir uns und klären, ob wir Ihren Fall übernehmen können. Entscheidend ist, ob Ihre Wohnung unter den vollen Anwendungsbereich des österreichischen Mietrechtsgesetzes (MRG) fällt. Wenn das zutrifft, begleiten wir Sie mit spezialisierten Rechtspartnern bei der Durchsetzung. Ziel ist eine Mietsenkung und die Rückholung möglicher Überzahlungen. Nach Abschluss erhalten Sie die Rückzahlung abzüglich Erfolgsprovision, und Ihre laufende Miete kann entsprechend angepasst werden.",
     howStep1Label: "Schritt 1",
-    howStep1Title: "Mietcheck starten und Unterlagen einreichen",
-    howStep1Text: "Pruefen Sie zuerst, ob Ihre Miete ueber der Grenze liegt. Wenn Ihr Fall passt, reichen Sie die Unterlagen direkt ein.",
+    howStep1Title: "Prüfen, ob Sie anspruchsberechtigt sind",
+    howStep1Text: "Prüfen Sie zuerst, ob Ihre Miete über der Grenze liegt. Wenn Ihr Fall passt, reichen Sie die Unterlagen direkt ein.",
     howStep1Cta: "Check Now",
     howStep2Label: "Schritt 2",
-    howStep2Title: "Unser Team prueft Ihren Fall",
-    howStep2Text: "Wir analysieren Vertrag und Mietdaten und geben Ihnen eine klare Ersteinschaetzung.",
+    howStep2Title: "Unser Team prüft Ihren Fall",
+    howStep2Text: "Wir analysieren Vertrag und Mietdaten und geben Ihnen eine klare Ersteinschätzung.",
     howStep3Label: "Schritt 3",
     howStep3Title: "Wir starten den Einigungsprozess",
-    howStep3Text: "Wir uebernehmen die Kommunikation mit Vermieter oder Hausverwaltung und streben eine faire Einigung an.",
-    howStep4Label: "Schritt 4",
-    howStep4Title: "Sie erhalten Ihr Geld zurueck",
-    howStep4Text: "Wenn Ihr Anspruch durchgesetzt ist, wird die Rueckzahlung gemaess Ergebnis abgewickelt.",
+    howStep3Text: "Wir übernehmen die Kommunikation mit Vermieter oder Hausverwaltung und streben eine faire Einigung an.",
+    howStep4Label: "Ergebnis",
+    howStep4Title: "Auszahlung",
+    howStep4Text:
+      "Wenn Ihr Fall erfolgreich ist, erhalten Sie die bisher zu viel gezahlte Miete zurück. Die laufende Miete wird danach auf das gesetzlich zulässige Niveau angepasst.",
 
-    whyEyebrow: "Wussten Sie schon?",
-    whyTitle: "Wussten Sie, dass manche Mieten gesetzlich gedeckelt sind?",
-    whyLead: "Sie konnten aktuell mehr Nettomiete zahlen, als gesetzlich vorgesehen ist.",
+    whyEyebrow: "Schon gewusst?",
+    whyTitle: "Für viele Altbauwohnungen gelten gesetzliche Mietobergrenzen",
+    whyLead:
+      "Wenn Sie in einem älteren Gebäude wohnen, könnte Ihre Miete über dem gesetzlich zulässigen Betrag liegen.",
     whyParagraph1:
-      "In Osterreich gelten fur bestimmte Wohnungen klare Mietobergrenzen. Gerade in Altbau-Fallen wird diese Grenze in der Praxis nicht immer eingehalten.",
+      "Nach österreichischem Mietrecht fallen viele Wohnungen mit Baujahr vor 1945 unter regulierte Mietregeln. Diese Grenzen werden bei Vertragsabschluss jedoch nicht immer korrekt angewendet.",
     whyParagraph2:
-      "Unser Mietcheck zeigt in wenigen Minuten, ob bei Ihrer Wohnung ein realistischer Verdacht auf Uberzahlung besteht.",
+      "Unser Mietcheck gibt Ihnen schnell eine erste Einschätzung, ob Ihre Wohnung betroffen sein könnte.",
     whyParagraph3:
-      "Wenn Ihr Fall passt, begleiten wir die nachsten Schritte mit Rechtspartnern - zuerst aussergerichtlich und wenn notig auch vor Gericht.",
-    whyCta: "Jetzt Uberzahlung berechnen",
+      "Wenn Ihr Fall geeignet wirkt, begleiten wir die nächsten Schritte gemeinsam mit unseren Rechtspartnern.",
+    whyCta: "Prüfen Sie, ob Ihre Miete zu hoch ist",
     whyImageAlt: "Stadtansicht von Innsbruck mit Nordkette",
 
-    trustTitle: "Was passiert, wenn Ihre Miete ueber der gesetzlichen Grenze liegt",
+    trustTitle: "Über uns",
     trustLead:
-      "Wir starten immer mit der einfachsten und schnellsten Loesung. In vielen Faellen kann frueh eine faire Einigung mit Vermieter oder Hausverwaltung erreicht werden.",
-    trustCard1Title: "1. Direkte Einigung mit Vermieter",
+      "Wir sind ein mieterfokussierter Rent Check Service für Tirol. Unser Ziel ist es, mögliche Miet-Überzahlungen schnell sichtbar zu machen und den nächsten sinnvollen Schritt klar zu zeigen.",
+    trustCard1Title: "Unsere Mission",
     trustCard1Text:
-      "Wir kontaktieren zuerst Vermieter oder Hausverwaltung, klaeren die Situation direkt und streben eine faire aussergerichtliche Einigung an.",
-    trustCard2Title: "2. Prufung durch die zustaendige Behoerde",
+      "Mietrechte sollen für Mieter verständlich und leicht zugänglich sein - ohne unnötige Komplexität.",
+    trustCard2Title: "So arbeiten wir",
     trustCard2Text:
-      "Wird keine Einigung erreicht, reichen wir den Fall bei der zustaendigen oeffentlichen Stelle ein, die prueft, ob die Miete ueber der gesetzlichen Grenze liegt.",
-    trustCard3Title: "3. Gericht nur wenn notwendig",
+      "Wir verbinden einen schnellen digitalen Vorab-Check mit einer strukturierten Fallprüfung durch erfahrene Rechtspartner.",
+    trustCard3Title: "Wofür wir stehen",
     trustCard3Text:
-      "Bleibt das Thema weiter offen, koennen unsere Rechtspartner den Anspruch gerichtlich durchsetzen, um Ihre Rechte zu schuetzen.",
-    trustPanelTitle: "Was das fuer Sie bedeutet",
-    trustList1: "Wir zielen immer zuerst auf eine schnelle und einvernehmliche Loesung.",
-    trustList2: "Wenn noetig wird der Fall vor einem Gerichtsverfahren von der zustaendigen Behoerde geprueft.",
-    trustList3: "Die Einreichung Ihres Falls und die Ersteinschaetzung sind kostenlos.",
-    trustList4: "Ihre Unterlagen und personenbezogenen Daten werden sicher und vertraulich behandelt.",
+      "Klare Kommunikation, realistische Einschätzungen und transparente Begleitung vom ersten Ergebnis bis zur Lösung.",
+    trustPanelTitle: "Was Sie von uns erwarten können",
+    trustList1: "Eine schnelle Ersteinschätzung in wenigen Minuten.",
+    trustList2: "Eine klare Empfehlung, ob Ihr Fall weiterverfolgt werden sollte.",
+    trustList3: "Sichere und vertrauliche Behandlung Ihrer Unterlagen.",
+    trustList4: "Transparente Updates, damit Sie die nächsten Schritte jederzeit kennen.",
     trustNote:
-      "Sie zahlen nur, wenn wir erfolgreich Geld fuer Sie zurueckholen - unser Honorar ist ein prozentualer Anteil der Rueckzahlung.",
+      "Wir übernehmen alle notwendigen Kosten zur Durchsetzung Ihrer Ansprüche. Es macht keinen Unterschied, ob zuerst eine außergerichtliche Einigung erreicht wird oder ob wir Ihre Ansprüche vor Gericht durchsetzen müssen.",
 
-    calcTitle: "Berechnen Sie selbst, ob Ihre Miete uber der zulassigen Grenze liegt",
-    calcLead: "Mit wenigen Angaben sehen Sie, wie viel Sie moglicherweise zu viel gezahlt haben.",
+    calcTitle: "Berechnen Sie selbst, ob Ihre Miete über der zulässigen Grenze liegt",
+    calcLead: "Mit wenigen Angaben sehen Sie, wie viel Sie möglicherweise zu viel gezahlt haben.",
 
     step1Title: "Schritt 1: Adresse",
     stepNav1: "Adresse",
-    stepNav2: "Gebaude",
+    stepNav2: "Gebäude",
     stepNav3: "Miete",
     stepNav4: "Merkmale",
     stepNav5: "Ergebnis",
     labelAddressSearch: "Adresse",
     placeholderAddressSearch: "z.B. Museumstrasse 12, Innsbruck",
-    addressHelp: "Starten Sie mit der Eingabe und wahlen Sie eine Adresse aus der Liste.",
+    addressHelp: "Starten Sie mit der Eingabe und wählen Sie eine Adresse aus der Liste.",
     manualAddressToggle: "Adresse manuell eingeben",
     manualAddressUseAutocomplete: "Google-Adresse verwenden",
     addressDetected: "Erkannte Adresse",
     addressApiError:
-      "Google Maps konnte nicht geladen werden. Sie konnen stattdessen auf 'Adresse manuell eingeben' klicken.",
-    addressSelectSuggestionError: "Bitte wahlen Sie eine Adresse aus den Google-Vorschlagen aus.",
-    addressIncompleteError: "Adresse unvollstandig. Bitte eine genauere Adresse auswahlen.",
-    labelStreet: "Strasse",
+      "Google Maps konnte nicht geladen werden. Sie können stattdessen auf 'Adresse manuell eingeben' klicken.",
+    addressSelectSuggestionError: "Bitte wählen Sie eine Adresse aus den Google-Vorschlagen aus.",
+    addressIncompleteError: "Adresse unvollständig. Bitte eine genauere Adresse auswählen.",
+    labelStreet: "Straße",
     labelHouseNumber: "Hausnummer",
     labelPostalCode: "Postleitzahl",
     labelCity: "Stadt",
@@ -105,53 +109,63 @@ const translations = {
     placeholderHouseNumber: "z.B. 12",
     placeholderPostalCode: "z.B. 6020",
     placeholderCity: "z.B. Innsbruck",
-    stateSelectPlaceholder: "Bitte auswahlen",
+    stateSelectPlaceholder: "Bitte auswählen",
     stateVienna: "Wien",
     stateTirol: "Tirol",
     stateSalzburg: "Salzburg",
-    stateUpperAustria: "Oberosterreich",
-    stateLowerAustria: "Niederosterreich",
+    stateUpperAustria: "Oberösterreich",
+    stateLowerAustria: "Niederösterreich",
     stateStyria: "Steiermark",
-    stateCarinthia: "Karnten",
+    stateCarinthia: "Kärnten",
     stateVorarlberg: "Vorarlberg",
     stateBurgenland: "Burgenland",
 
-    step2Title: "Schritt 2: Gebaude-Basics",
-    labelSize: "Wohnflache (m²)",
+    step2Title: "Schritt 2: Gebäude-Basics",
+    labelSize: "Wohnfläche (m²)",
     labelSizeHelp:
-      "Nur die nutzbare Innenwohnflaeche in m² angeben. Keine Aussenflaechen (z. B. Balkon/Terrasse) einrechnen.",
-    labelNetRent: "Monatliche Nettomiete (EUR)",
-    labelNetRentHelp: "Bitte nur die reine Nettomiete angeben, ohne Betriebskosten oder andere Nebenkosten.",
-    labelBuildingAge: "Baujahr",
-    labelBuildingAgeHelp: "Falls Sie das Baujahr nicht genau kennen, wahlen Sie einfach \"Unbekannt\".",
-    buildingBefore1953: "Vor 1953",
-    building1953to2021: "1953 bis 2021",
-    buildingAfter2021: "Nach 2021",
+      "Nur die nutzbare Innenwohnfläche in m² angeben. Keine Aussenflächen (z. B. Balkon/Terrasse) einrechnen.",
+    labelNetRent: "Monatliche Miete (EUR)",
+    labelNetRentHelp: "Bitte nur die Miete angeben, ohne Betriebskosten oder andere Nebenkosten.",
+    labelBuildingAge: "Wurde das Gebäude vor 1945 gebaut?",
+    labelBuildingAgeHelp: "Falls Sie es nicht sicher wissen, wählen Sie einfach \"Unbekannt\".",
+    buildingBefore1945: "Vor 1945",
+    building1945OrLater: "1945 oder später",
     buildingUnknown: "Unbekannt",
-    buildingNotice: "Hinweis: Bei Gebauden nach 2021 gilt MRG in der Regel nicht.",
-    labelBuildingUnits: "Wie viele Wohnungen sind im Gebaude?",
-    unitsOptionPlaceholder: "Bitte auswahlen",
+    buildingNoticeTitle: "Gilt die Mietobergrenze für meine Wohnung?",
+    buildingNoticeLine1:
+      "Die strengsten Mietobergrenzen gelten für Wohnungen in Gebäuden, die vor 1945 gebaut wurden.",
+    buildingNoticeLine2:
+      "Diese gelten im österreichischen Mietrechtsgesetz (MRG) als Altbau.",
+    buildingNoticeLine3:
+      "Liegt Ihre Wohnung in einem solchen Gebäude, ist die Miete typischerweise durch den Richtwertmietzins begrenzt und darf den gesetzlich erlaubten Betrag nicht überschreiten.",
+    buildingNoticeLine4:
+      "Auch bei neueren Gebäuden können Teile des MRG gelten - das prüfen wir in unserer Fallprüfung.",
+    labelBuildingUnits: "Wie viele Wohnungen sind im Gebäude?",
+    unitsOptionPlaceholder: "Bitte auswählen",
     units1to2: "1 bis 2",
     units3to10: "3 bis 10",
     unitsMoreThan10: "Mehr als 10",
     unitsUnknown: "Unbekannt",
     labelContractStartDate: "Vertragsbeginn",
     labelContractEndDate: "Vertragsende",
-    labelContractStillRunning: "Der Vertrag lauft noch",
-    contractDateHelp: "Wenn der Vertrag noch lauft, wird bis heute gerechnet.",
-    contractEndRequiredError: "Bitte geben Sie ein Vertragsende an oder aktivieren Sie 'Der Vertrag lauft noch'.",
+    labelContractType: "Mietvertrag",
+    contractTypeOpenEnded: "Unbefristet",
+    contractTypeFixedTerm: "Befristet",
+    labelContractStillRunning: "Der Vertrag läuft noch",
+    contractDateHelp: "Wenn der Vertrag noch läuft, wird bis heute gerechnet.",
+    contractEndRequiredError: "Bitte geben Sie ein Vertragsende an oder aktivieren Sie 'Der Vertrag läuft noch'.",
     contractDateOrderError: "Das Vertragsende muss nach dem Vertragsbeginn liegen.",
-    contractDateFutureError: "Ein Vertragsbeginn in der Zukunft ist nicht moglich.",
+    contractDateFutureError: "Ein Vertragsbeginn in der Zukunft ist nicht möglich.",
 
     step3Title: "Schritt 3: Mietdaten und Vertragszeitraum",
     labelFloor: "Stockwerk",
     floorGround: "Erdgeschoss",
     floor1to3: "1 bis 3",
-    floor4plus: "4 oder hoher",
+    floor4plus: "4 oder höher",
     labelElevator: "Aufzug",
     yes: "Ja",
     no: "Nein",
-    labelBalcony: "Aussenflache",
+    labelBalcony: "Außenfläche",
     balconyNone: "Keine",
     balconyBalcony: "Balkon",
     balconyTerrace: "Terrasse",
@@ -172,26 +186,29 @@ const translations = {
     locationPoor: "Schwach",
 
     step4Title: "Schritt 4: Wohnungsmerkmale",
-    step5Title: "Schritt 5: Ihre Ersteinschatzung",
-    resultIntro: "Hier sehen Sie zuerst Ihren potenziellen Gewinn.",
-    resultLegalRentM2Label: "Gesetzliche Miete (geschatzt) pro m²",
-    resultLegalRentTotalLabel: "Gesetzliche Miete gesamt (geschatzt)",
-    resultCurrentRentLabel: "Ihre aktuelle Nettomiete",
-    resultOverpaymentLabel: "Mogliche Uberzahlung pro Monat",
-    resultDurationLabel: "Berucksichtigte Vertragsdauer",
+    step5Title: "Schritt 5: Ihre Ersteinschätzung",
+    resultIntro: "Hier ist Ihre Ersteinschätzung auf einen Blick.",
+    resultLegalRentM2Label: "Gesetzliche Miete pro m² (geschätzt)",
+    resultLegalRentTotalLabel: "Gesetzlich zulässige Monatsmiete (geschätzt)",
+    resultCurrentRentLabel: "Ihre aktuelle Miete",
+    resultOverpaymentLabel: "Mögliche Überzahlung pro Monat",
+    resultDurationLabel: "Berücksichtigte Vertragsdauer",
     resultRefundLabel: "Potenzieller Gewinn (Vertragsdauer)",
+    resultBreakdownTitle: "So setzt sich die Einschätzung zusammen",
+    resultIneligibleByAgeMessage:
+      "Bei Gebäuden ab Baujahr 1945 gilt das österreichische Mietrechtsgesetz (MRG) nicht.",
     resultDurationUnit: "Monate",
 
     qualifiedTitle: "Ihr Fall sieht passend aus.",
-    qualifiedText: "Senden Sie jetzt Ihre Daten und Unterlagen fur die juristische Prufung.",
+    qualifiedText: "Senden Sie jetzt Ihre Daten und Unterlagen für die juristische Prüfung.",
     leadTrust1: "Vertrauliche Behandlung Ihrer Unterlagen.",
-    leadTrust2: "Kontakt nur fur die Fallprufung und Folgeschritte.",
-    leadTrust3: "Transparente Datenverarbeitung gemass Datenschutzerklarung.",
+    leadTrust2: "Kontakt nur für die Fallprüfung und Folgeschritte.",
+    leadTrust3: "Transparente Datenverarbeitung gemäß Datenschutzerklärung.",
     leadCostNote:
-      "Sie zahlen nur im Erfolgsfall: Unsere Provision wird aus der tatsachlich erreichten Zahlung genommen.",
-    notQualifiedTitle: "Aktuell keine klare Uberzahlung erkennbar.",
+      "Sie zahlen nur im Erfolgsfall: Unsere Provision wird aus der tatsächlich erreichten Zahlung genommen.",
+    notQualifiedTitle: "Aktuell keine klare Überzahlung erkennbar.",
     notQualifiedText:
-      "Auf Basis dieser Eingaben sammeln wir hier keine Kontaktdaten. Sie konnen mit angepassten Daten erneut prufen.",
+      "Auf Basis dieser Eingaben sammeln wir hier keine Kontaktdaten. Sie können mit angepassten Daten erneut prüfen.",
     submitLeadBtn: "Fall einreichen",
     leadSuccess: "Danke. Ihr Fall wurde erfasst. Unser Team meldet sich zeitnah.",
 
@@ -199,68 +216,114 @@ const translations = {
     labelEmail: "E-Mail",
     labelPhone: "Telefon",
     labelUpload: "Mietvertrag hochladen (optional)",
-    consentText: "Ich stimme der Kontaktaufnahme und Verarbeitung meiner Angaben zur Fallprufung zu.",
+    consentText: "Ich stimme der Kontaktaufnahme und Verarbeitung meiner Angaben zur Fallprüfung zu.",
 
     disclaimerText:
-      "Dieser Rechner liefert nur eine unverbindliche Schatzung. Die exakte Rechtslage muss durch Rechtsexperten gepruft werden.",
+      "Dieser Rechner liefert nur eine unverbindliche Schätzung. Die exakte Rechtslage muss durch Rechtsexperten geprüft werden.",
 
-    btnBack: "Zuruck",
+    btnBack: "Zurück",
     btnNext: "Weiter",
-    btnEstimate: "Ersteinschatzung anzeigen",
+    btnEstimate: "Ersteinschätzung anzeigen",
     btnRestart: "Neu berechnen",
 
-    insightsTitle: "Leitfaeden und Ressourcen fuer Mieter",
+    insightsTitle: "Leitfäden und Ressourcen für Mieter",
     insightsLead:
-      "Hilfreiche Artikel zu Mietregulierung, Altbau-Kriterien und zur Abwicklung von Mietanspruechen in Oesterreich.",
+      "Hilfreiche Artikel zu Mietregulierung, Altbau-Kriterien und zur Abwicklung von Mietansprüchen in Österreich.",
     insight1Meta: "MRG Grundlagen",
-    insight1ImageAlt: "Vorschaubild zum Artikel ueber die MRG-Regelung",
-    insight1Title: "Was ist die MRG-Regelung in Oesterreich?",
+    insight1ImageAlt: "Vorschaubild zum Artikel über die MRG-Regelung",
+    insight1Title: "Was ist die MRG-Regelung in Österreich?",
     insight1Text:
-      "Verstehen Sie einfach, wie MRG funktioniert, welche Wohnungen oft betroffen sind und warum ein Mietcheck fuer Mieter sinnvoll ist.",
+      "Verstehen Sie einfach, wie MRG funktioniert, welche Wohnungen oft betroffen sind und warum ein Mietcheck für Mieter sinnvoll ist.",
     insight2Meta: "Praxis-Check",
     insight2ImageAlt: "Vorschaubild zur Altbau-Checkliste in Tirol",
     insight2Title: "Altbau in Tirol: Wann ist eine Wohnung meist relevant?",
     insight2Text:
-      "Eine einfache Checkliste zu Baujahr, Gebaudestruktur und Vertragsdaten - damit Mieter schneller einschatzen konnen, ob sich eine Prufung lohnt.",
+      "Eine einfache Checkliste zu Baujahr, Gebäudestruktur und Vertragsdaten - damit Mieter schneller einschätzen können, ob sich eine Prüfung lohnt.",
     insight3Meta: "Fallstrategie",
-    insight3ImageAlt: "Vorschaubild zum Artikel uber aussergerichtliche und gerichtliche Durchsetzung",
-    insight3Title: "Aussergerichtlich oder Gericht: Wie Anspruche durchgesetzt werden",
+    insight3ImageAlt: "Vorschaubild zum Artikel über außergerichtliche und gerichtliche Durchsetzung",
+    insight3Title: "Außergerichtlich oder Gericht: Wie Ansprüche durchgesetzt werden",
     insight3Text:
-      "Was Mieter vom Ablauf erwarten konnen, warum viele Falle ohne Gericht gelost werden und was passiert, wenn ein Verfahren notig wird.",
+      "Was Mieter vom Ablauf erwarten können, warum viele Fälle ohne Gericht gelöst werden und was passiert, wenn ein Verfahren nötig wird.",
     insightReadMore: "Artikel lesen",
 
-    faqTitle: "Haufige Fragen",
-    faq1Question: "Ist das Ergebnis rechtsverbindlich?",
-    faq1Answer: "Nein. Das Tool ist eine Vorprufung und ersetzt keine juristische Beratung.",
-    faq2Question: "Welche Wohnungen sind besonders relevant?",
-    faq2Answer: "Typisch sind Altbau-Objekte mit voller MRG-Regulierung, oft Baujahr vor ca. 1953.",
-    faq3Question: "Warum zuerst das Ergebnis und dann Kontakt?",
-    faq3Answer: "Damit nur passende Falle an das juristische Team weitergegeben werden.",
+    referencesTitle: "",
+    referencesLead: "What tenants say about us",
+    referencesPrevAria: "Vorherige Referenz",
+    referencesNextAria: "Nächste Referenz",
+    reference1Name: "Anna K. · Innsbruck",
+    reference1Text: "Der Check war schnell und verständlich. Danach wusste ich sofort, wie es weitergeht.",
+    reference2Name: "Markus L. · Innsbruck",
+    reference2Text: "Ich konnte meine Daten in wenigen Minuten eingeben und bekam eine klare erste Einschätzung.",
+    reference3Name: "Sophie R. · Innsbruck",
+    reference3Text: "Die Kommunikation war professionell und ich hatte jederzeit einen guten Überblick über die nächsten Schritte.",
+    reference4Name: "Daniela P. · Innsbruck",
+    reference4Text: "Für mich war wichtig, dass ich kein Risiko habe. Der Ablauf war transparent und sehr einfach.",
+    reference5Name: "Michael S. · Innsbruck",
+    reference5Text: "Die Kombination aus Online-Rechner und juristischer Prüfung hat mir viel Zeit gespart.",
+
+    faqTitle: "Frequently Asked Questions",
+    faq1Question: "How do I know if my rent might be too high?",
+    faq1Answer:
+      "Many apartments in older buildings are subject to legal rent limits. If your rent exceeds the legally permitted amount, it may be possible to reduce it. We review your contract and apartment details to determine whether your rent is within the allowed range.",
+    faq2Question: "Which apartments are usually eligible for a rent reduction?",
+    faq2Answer:
+      "Rent reviews most commonly apply to apartments in buildings constructed before 1945. These buildings are typically subject to rent limits under the Austrian Mietrechtsgesetz (MRG). If your apartment is located in such a building, your rent may be regulated and could potentially exceed the legally permitted amount. We review the details of your apartment and contract to determine whether these rules apply.",
+    faq3Question: "What information do you need to review my rent?",
+    faq3AnswerIntro: "Typically we only need a few basic details, such as:",
+    faq3AnswerBullet1: "your rent amount",
+    faq3AnswerBullet2: "the address of the apartment",
+    faq3AnswerBullet3: "the size of the apartment",
+    faq3AnswerBullet4: "your rental contract",
+    faq3AnswerOutro:
+      "With this information we can usually determine whether a deeper legal review makes sense.",
+    faq4Question: "How long does the process take?",
+    faq4Answer:
+      "An initial review usually only takes a short time once we receive the necessary information. If a case proceeds further, the overall process can take several weeks or months depending on the complexity and whether a settlement with the landlord can be reached quickly.",
+    faq5Question: "What happens if my rent is actually too high?",
+    faq5Answer:
+      "If the review shows that the rent exceeds the legal limit, the case can be pursued to adjust the rent. In successful cases, the rent is corrected to the legally permitted level and previously overpaid rent may be refunded.",
+    faq6Question: "Do I have to pay anything upfront?",
+    faq6Answer:
+      "No. The review and case handling are structured so that there is no upfront cost for you. A fee is only charged if the process leads to a successful outcome.",
+    faq7Question: "Can my landlord terminate my contract because of this?",
+    faq7Answer:
+      "No. Challenging the legality of a rent level is not a valid reason for termination. Landlords can only terminate a tenancy under specific legal conditions defined by law.",
+    faq8Question: "Can I still check my rent if I have already moved out?",
+    faq8Answer:
+      "Yes. In many cases you can still review your rent for up to six months after your rental contract has ended. If the rent you paid exceeded the legal limit, it may still be possible to claim a refund for the overpaid amount during this period.",
+    faq9Question: "How much could my rent be reduced?",
+    faq9Answer:
+      "This depends on several factors such as the size of the apartment, its location, and the legal rent category. In some cases tenants receive refunds for past overpayments and also benefit from a lower rent going forward.",
+    faq10Question: "What happens after I submit my case?",
+    faq10Answer:
+      "First we check whether the rent level appears legally compliant. If there are indications that the rent is too high, the case can move forward with a detailed review and, if appropriate, communication with the landlord or further legal steps.",
 
     imprintLink: "Impressum",
     privacyLink: "Datenschutz",
-    footerDisclaimer: "Ersteinschatzung fur Mietthemen in Innsbruck und Tirol. Keine Rechtsberatung.",
+    footerDisclaimer: "Ersteinschätzung für Mietthemen in Innsbruck und Tirol. Keine Rechtsberatung.",
     footerCompanyName: "Betreiber: [Firmenname GmbH]",
     footerCompanyLocation: "Sitz: Innsbruck, Tirol",
     footerCompanyContact: "Kontakt: [kontakt@ihre-domain.at]",
 
     summaryHigh:
-      "Hohe Wahrscheinlichkeit fur Uberzahlung. Eine juristische Prufung ist klar zu empfehlen.",
+      "Hohe Wahrscheinlichkeit für Überzahlung. Eine juristische Prüfung ist klar zu empfehlen.",
     summaryMedium:
-      "Es gibt Hinweise auf eine mogliche Uberzahlung. Eine juristische Prufung ist sinnvoll.",
+      "Es gibt Hinweise auf eine mögliche Überzahlung. Eine juristische Prüfung ist sinnvoll.",
     summaryLow:
-      "Aktuell zeigt die Eingabe keine klare Uberzahlung.",
-    summaryAfter2021:
-      "Das Objekt wurde als Baujahr nach 2021 angegeben. MRG gilt hier in der Regel nicht.",
+      "Aktuell zeigt die Eingabe keine klare Überzahlung.",
+    summaryFrom1945On:
+      "Bei Gebäuden ab Baujahr 1945 greift die strengste Altbau-Mietdeckelung in der Regel nicht. Auf Basis dieser Angabe endet die Online-Prüfung hier.",
     summaryContractDuration: "Berechneter Zeitraum: {months} Monate.",
     resultPerSquareMeter: "pro m²"
   },
   en: {
     brandName: "Check your Rent",
-    navCalculator: "Calculator",
+    navCalculator: "Rent Calculator",
+    navAbout: "About Us",
     navHow: "Process",
     navTrust: "Trust",
     navFaq: "FAQ",
+    navContact: "Contact us",
     heroEyebrow: "Rent check for Innsbruck and Tyrol",
     heroTitlePrefix: "Quickly check whether your rent in ",
     heroTitleSuffix: " may be too high.",
@@ -275,20 +338,20 @@ const translations = {
     heroMetric1Label: "to first estimate",
     heroMetric2Value: "36-month",
     heroMetric2Label: "potential refund horizon",
-    heroMetric3Value: "100%",
-    heroMetric3Label: "free",
+    heroMetric3Value: "Risk Free",
+    heroMetric3Label: "no upfront cost",
     heroTrustEyebrow: "Innsbruck focus",
     heroTrustTitle: "Locally rooted in Tyrol, fast and digital to access.",
     heroTrustText:
       "Start online in minutes and receive a personal legal assessment for qualified cases.",
     heroImageLabel: "Innsbruck, Tyrol",
 
-    howTitle: "How the process works",
+    howTitle: "How our service works",
     howLead: "A simple and transparent process in four easy steps.",
     howBenefit:
-      "Start by checking whether your rent may be above the legal limit. If your case looks promising, you can submit the form online. Our team will review your contract and rent details to confirm whether a recovery is possible. If an overpayment is likely, we handle the entire process for you - including communication with the landlord or property manager - and work to reach a fair settlement. In most cases, the issue is resolved without the need for court proceedings.",
+      "After your free rent check, we contact you to confirm whether we can take your case. The key question is whether your apartment falls under the full scope of the Austrian Tenancy Act (MRG). If it does, we support you through the next steps with specialized legal partners. The goal is to reduce rent where possible and recover overpaid amounts. Once the case is resolved, you receive the refund minus the agreed success fee, and your ongoing rent may be adjusted.",
     howStep1Label: "Step 1",
-    howStep1Title: "Check your rent and submit documents",
+    howStep1Title: "Check if you are eligible",
     howStep1Text: "Start with the rent check. If your case looks eligible, submit your documents right away.",
     howStep1Cta: "Check Now",
     howStep2Label: "Step 2",
@@ -297,41 +360,43 @@ const translations = {
     howStep3Label: "Step 3",
     howStep3Title: "We start the settlement process",
     howStep3Text: "We handle communication with the landlord or property manager and work toward a fair settlement.",
-    howStep4Label: "Step 4",
-    howStep4Title: "Get your money back",
-    howStep4Text: "Once the claim is resolved, your recovered amount is paid out according to the result.",
+    howStep4Label: "Result",
+    howStep4Title: "Payout",
+    howStep4Text:
+      "If your case succeeds, you get back the rent you have overpaid so far. Your future rent is then adjusted to the legally permitted level.",
 
     whyEyebrow: "Did you know?",
-    whyTitle: "Did you know that some rents are legally capped?",
-    whyLead: "You may currently be paying more net rent than legally allowed.",
+    whyTitle: "Many apartments in buildings built before 1945 are subject to legal rent limits.",
+    whyLead:
+      "If you live in an older building, your rent may be higher than the legally permitted amount.",
     whyParagraph1:
-      "In Austria, certain apartments are subject to legal rent limits. In practice, this cap is not always respected, especially in older buildings.",
+      "Under Austrian tenancy law, many pre-1945 apartments fall under regulated rent rules. However, these limits are not always applied correctly when rental contracts are signed.",
     whyParagraph2:
-      "Our rent check gives you a quick first estimate of whether your apartment shows a realistic overpayment risk.",
+      "Our rent check gives you a quick first estimate of whether your apartment may be affected.",
     whyParagraph3:
-      "If your case looks eligible, we support the next steps with legal partners - first out of court, and in court only if needed.",
-    whyCta: "Calculate your overpayment now",
+      "If your case appears eligible, we handle the next steps together with our legal partners.",
+    whyCta: "Check if your rent is too high",
     whyImageAlt: "City view of Innsbruck with mountain backdrop",
 
-    trustTitle: "What happens if your rent is above the legal limit",
+    trustTitle: "About us",
     trustLead:
-      "We always start with the simplest and fastest solution. In many cases, a fair agreement with the landlord or property manager can be reached early in the process.",
-    trustCard1Title: "1. Direct settlement with landlord",
+      "We are a tenant-focused rent check service for Tyrol. Our goal is to identify potential overpayment quickly and guide you to the right next step with clarity.",
+    trustCard1Title: "Our mission",
     trustCard1Text:
-      "We first contact the landlord or property manager to resolve the issue directly and aim for a fair out-of-court agreement.",
-    trustCard2Title: "2. Review by the official authority",
+      "Make rent rights easier to understand and accessible to tenants without unnecessary legal complexity.",
+    trustCard2Title: "How we work",
     trustCard2Text:
-      "If no agreement is reached, we submit the case to the responsible public authority, which reviews whether the rent exceeds the legal limit.",
-    trustCard3Title: "3. Court only if needed",
+      "We combine a fast digital pre-check with a structured case review handled by experienced legal partners.",
+    trustCard3Title: "What we stand for",
     trustCard3Text:
-      "If the issue is still unresolved, our legal partners can proceed with court enforcement to protect your rights.",
-    trustPanelTitle: "What this means for you",
-    trustList1: "We always aim for a fast and amicable solution first.",
-    trustList2: "If necessary, the case can be reviewed by the responsible authority before any court involvement.",
-    trustList3: "Submitting your case and the initial review are free.",
-    trustList4: "Your documents and personal data are handled securely and confidentially.",
+      "Clear communication, realistic assessment, and transparent support from first estimate to resolution.",
+    trustPanelTitle: "What you can expect from us",
+    trustList1: "A quick first estimate in just a few minutes.",
+    trustList2: "A clear recommendation on whether your case should move forward.",
+    trustList3: "Secure and confidential handling of your documents.",
+    trustList4: "Transparent updates so you always know the next step.",
     trustNote:
-      "You only pay if we successfully recover money for you - our fee is taken as a percentage of the recovered amount.",
+      "We cover all necessary costs to pursue your claims. It makes no difference whether an out-of-court settlement is reached first or whether we need to enforce your claims in court.",
 
     calcTitle: "Calculate if your rent is above the allowed limit",
     calcLead: "With a few inputs, see how much you may have overpaid.",
@@ -376,15 +441,22 @@ const translations = {
     labelSize: "Apartment size (m²)",
     labelSizeHelp:
       "Enter only usable interior living space in m². Do not include outdoor space (balcony/terrace).",
-    labelNetRent: "Monthly net rent (EUR)",
-    labelNetRentHelp: "Enter only the base net rent, without operating costs or other add-ons.",
-    labelBuildingAge: "Building age",
-    labelBuildingAgeHelp: "If you are not sure about the exact year, just choose \"Unknown\".",
-    buildingBefore1953: "Before 1953",
-    building1953to2021: "1953 to 2021",
-    buildingAfter2021: "After 2021",
+    labelNetRent: "Monthly rent (EUR)",
+    labelNetRentHelp: "Enter only the rent amount, without operating costs or other add-ons.",
+    labelBuildingAge: "Was the building constructed before 1945?",
+    labelBuildingAgeHelp: "If you are not sure, just choose \"Unknown\".",
+    buildingBefore1945: "Before 1945",
+    building1945OrLater: "1945 or later",
     buildingUnknown: "Unknown",
-    buildingNotice: "Notice: for buildings after 2021, MRG usually does not apply.",
+    buildingNoticeTitle: "Does the rent cap apply to my apartment?",
+    buildingNoticeLine1:
+      "The strongest rent limits apply to apartments in buildings constructed before 1945.",
+    buildingNoticeLine2:
+      "These are considered Altbau under the Austrian Mietrechtsgesetz (MRG).",
+    buildingNoticeLine3:
+      "If your apartment is in such a building, your rent is typically limited by the Richtwertmietzins and may not exceed the legally permitted amount.",
+    buildingNoticeLine4:
+      "Even if the building is newer, there are still situations where parts of the MRG may apply - which we check during our review.",
     labelBuildingUnits: "How many apartments are in the building?",
     unitsOptionPlaceholder: "Please select",
     units1to2: "1 to 2",
@@ -393,6 +465,9 @@ const translations = {
     unitsUnknown: "Unknown",
     labelContractStartDate: "Contract start date",
     labelContractEndDate: "Contract end date",
+    labelContractType: "Rental contract",
+    contractTypeOpenEnded: "Open-ended",
+    contractTypeFixedTerm: "Fixed-term",
     labelContractStillRunning: "Contract is still running",
     contractDateHelp: "If the contract is still running, calculation uses today as the end date.",
     contractEndRequiredError: "Please enter a contract end date or mark 'Contract is still running'.",
@@ -429,13 +504,16 @@ const translations = {
 
     step4Title: "Step 4: Apartment features",
     step5Title: "Step 5: Your initial estimate",
-    resultIntro: "You see your potential win first.",
+    resultIntro: "Here is your estimate at a glance.",
     resultLegalRentM2Label: "Estimated legal rent per m²",
-    resultLegalRentTotalLabel: "Estimated legal total rent",
-    resultCurrentRentLabel: "Your current net rent",
+    resultLegalRentTotalLabel: "Estimated allowed monthly rent",
+    resultCurrentRentLabel: "Your current rent",
     resultOverpaymentLabel: "Possible monthly overpayment",
     resultDurationLabel: "Considered contract duration",
     resultRefundLabel: "Potential win (contract duration)",
+    resultBreakdownTitle: "How this estimate is built",
+    resultIneligibleByAgeMessage:
+      "For buildings constructed in 1945 or later, the Austrian Tenancy Act (MRG) does not apply.",
     resultDurationUnit: "months",
 
     qualifiedTitle: "Your case looks eligible.",
@@ -485,13 +563,57 @@ const translations = {
       "What tenants can expect from the process, why many cases settle without court, and what happens when court becomes necessary.",
     insightReadMore: "Read article",
 
-    faqTitle: "Frequently asked questions",
-    faq1Question: "Is this result legally binding?",
-    faq1Answer: "No. This tool is a pre-check and does not replace legal advice.",
-    faq2Question: "Which apartments are most relevant?",
-    faq2Answer: "Typically old buildings under full MRG regulation, often built before around 1953.",
-    faq3Question: "Why show result before contact details?",
-    faq3Answer: "So only likely-qualified cases are forwarded to the legal team.",
+    referencesTitle: "",
+    referencesLead: "What tenants say about us",
+    referencesPrevAria: "Previous reference",
+    referencesNextAria: "Next reference",
+    reference1Name: "Anna K. · Innsbruck",
+    reference1Text: "The check was quick and easy to understand. I knew right away what to do next.",
+    reference2Name: "Markus L. · Innsbruck",
+    reference2Text: "I entered my details in just a few minutes and got a clear first estimate.",
+    reference3Name: "Sophie R. · Innsbruck",
+    reference3Text: "The communication felt professional and I always had a clear view of the next steps.",
+    reference4Name: "Daniela P. · Innsbruck",
+    reference4Text: "I liked that it was risk free for me. The process was transparent and very simple.",
+    reference5Name: "Michael S. · Innsbruck",
+    reference5Text: "The mix of online calculator and legal review saved me a lot of time.",
+
+    faqTitle: "Frequently Asked Questions",
+    faq1Question: "How do I know if my rent might be too high?",
+    faq1Answer:
+      "Many apartments in older buildings are subject to legal rent limits. If your rent exceeds the legally permitted amount, it may be possible to reduce it. We review your contract and apartment details to determine whether your rent is within the allowed range.",
+    faq2Question: "Which apartments are usually eligible for a rent reduction?",
+    faq2Answer:
+      "Rent reviews most commonly apply to apartments in buildings constructed before 1945. These buildings are typically subject to rent limits under the Austrian Mietrechtsgesetz (MRG). If your apartment is located in such a building, your rent may be regulated and could potentially exceed the legally permitted amount. We review the details of your apartment and contract to determine whether these rules apply.",
+    faq3Question: "What information do you need to review my rent?",
+    faq3AnswerIntro: "Typically we only need a few basic details, such as:",
+    faq3AnswerBullet1: "your rent amount",
+    faq3AnswerBullet2: "the address of the apartment",
+    faq3AnswerBullet3: "the size of the apartment",
+    faq3AnswerBullet4: "your rental contract",
+    faq3AnswerOutro:
+      "With this information we can usually determine whether a deeper legal review makes sense.",
+    faq4Question: "How long does the process take?",
+    faq4Answer:
+      "An initial review usually only takes a short time once we receive the necessary information. If a case proceeds further, the overall process can take several weeks or months depending on the complexity and whether a settlement with the landlord can be reached quickly.",
+    faq5Question: "What happens if my rent is actually too high?",
+    faq5Answer:
+      "If the review shows that the rent exceeds the legal limit, the case can be pursued to adjust the rent. In successful cases, the rent is corrected to the legally permitted level and previously overpaid rent may be refunded.",
+    faq6Question: "Do I have to pay anything upfront?",
+    faq6Answer:
+      "No. The review and case handling are structured so that there is no upfront cost for you. A fee is only charged if the process leads to a successful outcome.",
+    faq7Question: "Can my landlord terminate my contract because of this?",
+    faq7Answer:
+      "No. Challenging the legality of a rent level is not a valid reason for termination. Landlords can only terminate a tenancy under specific legal conditions defined by law.",
+    faq8Question: "Can I still check my rent if I have already moved out?",
+    faq8Answer:
+      "Yes. In many cases you can still review your rent for up to six months after your rental contract has ended. If the rent you paid exceeded the legal limit, it may still be possible to claim a refund for the overpaid amount during this period.",
+    faq9Question: "How much could my rent be reduced?",
+    faq9Answer:
+      "This depends on several factors such as the size of the apartment, its location, and the legal rent category. In some cases tenants receive refunds for past overpayments and also benefit from a lower rent going forward.",
+    faq10Question: "What happens after I submit my case?",
+    faq10Answer:
+      "First we check whether the rent level appears legally compliant. If there are indications that the rent is too high, the case can move forward with a detailed review and, if appropriate, communication with the landlord or further legal steps.",
 
     imprintLink: "Legal notice",
     privacyLink: "Privacy policy",
@@ -503,8 +625,8 @@ const translations = {
     summaryHigh: "High probability of overpayment. Legal review is strongly recommended.",
     summaryMedium: "There are signs of possible overpayment. Legal review is recommended.",
     summaryLow: "Current inputs do not indicate clear overpayment.",
-    summaryAfter2021:
-      "The building was marked as post-2021. MRG usually does not apply in this case.",
+    summaryFrom1945On:
+      "For buildings constructed in 1945 or later, the strictest Altbau rent cap usually does not apply. Based on this input, the online check stops here.",
     summaryContractDuration: "Calculated period: {months} months.",
     resultPerSquareMeter: "per m²"
   }
@@ -662,12 +784,25 @@ const resultFields = {
   refund: document.getElementById("result-refund"),
   summary: document.getElementById("result-summary")
 };
+const resultUi = {
+  intro: document.getElementById("result-intro"),
+  ineligibleMessage: document.getElementById("result-ineligible-message"),
+  overview: document.querySelector(".result-overview"),
+  details: document.querySelector(".result-details-card"),
+  disclaimer: document.querySelector(".form-step[data-step='5'] .disclaimer")
+};
 const heroCounterNodes = Array.from(document.querySelectorAll("[data-hero-counter]"));
 const heroCityNode = document.getElementById("hero-city");
 const rotatingHeroCities = ["Innsbruck", "Kufstein", "Telfs", "Hall in Tirol", "Wörgl"];
 let heroCityIndex = 0;
 let heroCityTimerId = null;
 const insightLinkNodes = Array.from(document.querySelectorAll("#insights a[data-insight-id]"));
+const referenceSlides = Array.from(document.querySelectorAll(".reference-card"));
+const referenceDots = Array.from(document.querySelectorAll("[data-reference-dot]"));
+const referencePrevBtn = document.getElementById("reference-prev");
+const referenceNextBtn = document.getElementById("reference-next");
+let currentReferenceIndex = 0;
+let referenceTimerId = null;
 const processStep1Cta = document.getElementById("process-step1-cta");
 const insightLinksByLang = {
   de: {
@@ -732,6 +867,101 @@ function startHeroCityRotation() {
       heroCityNode.classList.remove("is-changing");
     }, 130);
   }, 2300);
+}
+
+function setReferenceA11yLabels() {
+  if (referencePrevBtn) {
+    referencePrevBtn.setAttribute("aria-label", t("referencesPrevAria"));
+  }
+  if (referenceNextBtn) {
+    referenceNextBtn.setAttribute("aria-label", t("referencesNextAria"));
+  }
+}
+
+function setReferenceSlide(index) {
+  if (!referenceSlides.length) {
+    return;
+  }
+
+  const normalizedIndex = (index + referenceSlides.length) % referenceSlides.length;
+  currentReferenceIndex = normalizedIndex;
+
+  referenceSlides.forEach((slide, slideIndex) => {
+    const isActive = slideIndex === normalizedIndex;
+    slide.classList.toggle("is-active", isActive);
+    slide.hidden = !isActive;
+  });
+
+  referenceDots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === normalizedIndex;
+    dot.classList.toggle("is-active", isActive);
+    dot.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+}
+
+function stopReferenceAutoplay() {
+  if (!referenceTimerId) {
+    return;
+  }
+  window.clearInterval(referenceTimerId);
+  referenceTimerId = null;
+}
+
+function startReferenceAutoplay() {
+  if (referenceSlides.length <= 1) {
+    return;
+  }
+
+  stopReferenceAutoplay();
+  referenceTimerId = window.setInterval(() => {
+    setReferenceSlide(currentReferenceIndex + 1);
+  }, 5200);
+}
+
+function initializeReferenceSlider() {
+  if (!referenceSlides.length) {
+    return;
+  }
+
+  setReferenceSlide(0);
+  setReferenceA11yLabels();
+
+  referenceDots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      setReferenceSlide(Number(dot.dataset.referenceDot));
+      startReferenceAutoplay();
+    });
+  });
+
+  if (referencePrevBtn) {
+    referencePrevBtn.addEventListener("click", () => {
+      setReferenceSlide(currentReferenceIndex - 1);
+      startReferenceAutoplay();
+    });
+  }
+
+  if (referenceNextBtn) {
+    referenceNextBtn.addEventListener("click", () => {
+      setReferenceSlide(currentReferenceIndex + 1);
+      startReferenceAutoplay();
+    });
+  }
+
+  const referenceContainer = document.getElementById("references");
+  if (referenceContainer) {
+    referenceContainer.addEventListener("mouseenter", stopReferenceAutoplay);
+    referenceContainer.addEventListener("mouseleave", startReferenceAutoplay);
+    referenceContainer.addEventListener("focusin", stopReferenceAutoplay);
+    referenceContainer.addEventListener("focusout", () => {
+      window.setTimeout(() => {
+        if (!referenceContainer.contains(document.activeElement)) {
+          startReferenceAutoplay();
+        }
+      }, 0);
+    });
+  }
+
+  startReferenceAutoplay();
 }
 
 function parseCounterText(value) {
@@ -835,7 +1065,7 @@ function initializeHeroCounterObserver() {
 function initializeScrollReveal() {
   const targets = Array.from(
     document.querySelectorAll(
-      "#why-we-do-this .didyouknow-eyebrow, #why-we-do-this h2, #why-we-do-this .section-lead, #why-we-do-this .why-points p, #why-we-do-this .didyouknow-media, #how-it-works .process-copy h2, #how-it-works .process-copy .section-lead, #how-it-works .process-main-cta, #how-it-works .process-item, #trust h2, #trust .section-lead, #trust .card, #trust .trust-panel, #calculator .section-header, #calculator .calculator-shell, #insights h2, #insights .section-lead, #insights .insight-card, #faq h2, #faq details"
+      "#why-we-do-this .didyouknow-eyebrow, #why-we-do-this h2, #why-we-do-this .section-lead, #why-we-do-this .why-points p, #why-we-do-this .didyouknow-media, #how-it-works .process-copy h2, #how-it-works .process-copy .section-lead, #how-it-works .process-main-cta, #how-it-works .process-item, #trust h2, #trust .section-lead, #trust .card, #trust .trust-panel, #calculator .section-header, #calculator .calculator-shell, #insights h2, #insights .section-lead, #insights .insight-card, #references h2, #references .section-lead, #references .reference-slider, #references .reference-dots, #faq h2, #faq details"
     )
   );
 
@@ -947,7 +1177,9 @@ function setManualAddressMode(enabled) {
 function applyManualAddressToHidden() {
   const street = manualAddress.street.value.trim();
   const houseNumber = manualAddress.houseNumber.value.trim();
-  const postalCode = manualAddress.postalCode.value.trim();
+  const postalCodeRaw = manualAddress.postalCode.value.trim();
+  const postalCodeMatch = postalCodeRaw.match(/\d{4,5}/);
+  const postalCode = postalCodeMatch ? postalCodeMatch[0] : "";
   const city = manualAddress.city.value.trim();
   const state = manualAddress.state.value;
 
@@ -1265,6 +1497,7 @@ function setLanguage(lang) {
       node.setAttribute("href", linksForLang[id]);
     }
   });
+  setReferenceA11yLabels();
 
   updateNavigationButtons();
   updateBuildingAgeNotice();
@@ -1433,8 +1666,10 @@ function validateStep(step) {
 }
 
 function updateBuildingAgeNotice() {
-  const ageValue = form.querySelector('input[name="building_age"]:checked')?.value;
-  buildingAgeNotice.hidden = ageValue !== "after_2021";
+  if (!buildingAgeNotice) {
+    return;
+  }
+  buildingAgeNotice.hidden = false;
 }
 
 function syncContractEndField() {
@@ -1446,6 +1681,23 @@ function syncContractEndField() {
   if (running) {
     contractFields.end.value = "";
   }
+}
+
+function calculateIneligibleByBuildingAgeResult() {
+  lastResult = {
+    legalRentM2: null,
+    legalRentTotal: null,
+    currentRent: null,
+    overpayment: null,
+    contractMonths: null,
+    refund: null,
+    buildingAge: "from_1945_on",
+    riskLevel: "low",
+    qualified: false,
+    ineligibleReason: "building_age_from_1945_on"
+  };
+
+  return lastResult;
 }
 
 function calculateResult() {
@@ -1478,12 +1730,10 @@ function calculateResult() {
   const ratio = currentRent > 0 ? overpayment / currentRent : 0;
 
   let riskLevel = "low";
-  if (buildingAge !== "after_2021") {
-    if (overpayment > 250 || ratio >= 0.2) {
-      riskLevel = "high";
-    } else if (overpayment > 0) {
-      riskLevel = "medium";
-    }
+  if (overpayment > 250 || ratio >= 0.2) {
+    riskLevel = "high";
+  } else if (overpayment > 0) {
+    riskLevel = "medium";
   }
 
   const qualified = riskLevel !== "low";
@@ -1497,24 +1747,58 @@ function calculateResult() {
     refund,
     buildingAge,
     riskLevel,
-    qualified
+    qualified,
+    ineligibleReason: null
   };
 
   return lastResult;
 }
 
 function renderResult(result) {
-  resultFields.legalM2.textContent = `${formatCurrency(result.legalRentM2)} ${t("resultPerSquareMeter")}`;
-  resultFields.legalTotal.textContent = formatCurrency(result.legalRentTotal);
-  resultFields.currentRent.textContent = formatCurrency(result.currentRent);
-  resultFields.overpayment.textContent = formatCurrency(result.overpayment);
-  resultFields.durationMonths.textContent = `${result.contractMonths} ${t("resultDurationUnit")}`;
-  resultFields.refund.textContent = formatCurrency(result.refund);
+  const ineligibleByAge = result.ineligibleReason === "building_age_from_1945_on";
+
+  if (resultUi.intro) {
+    resultUi.intro.hidden = ineligibleByAge;
+  }
+  if (resultUi.ineligibleMessage) {
+    resultUi.ineligibleMessage.hidden = !ineligibleByAge;
+    resultUi.ineligibleMessage.textContent = t("resultIneligibleByAgeMessage");
+  }
+  if (resultUi.overview) {
+    resultUi.overview.hidden = ineligibleByAge;
+  }
+  if (resultUi.details) {
+    resultUi.details.hidden = ineligibleByAge;
+  }
+  resultFields.summary.hidden = ineligibleByAge;
+  if (resultUi.disclaimer) {
+    resultUi.disclaimer.hidden = ineligibleByAge;
+  }
+
+  if (ineligibleByAge) {
+    resultFields.summary.textContent = "";
+    qualifiedBox.hidden = true;
+    notQualifiedBox.hidden = true;
+    leadFeedback.textContent = "";
+
+    [leadFields.name, leadFields.email, leadFields.phone, leadFields.consent].forEach((field) => {
+      field.removeAttribute("aria-invalid");
+    });
+    return;
+  }
+
+  resultFields.legalM2.textContent = Number.isFinite(result.legalRentM2)
+    ? `${formatCurrency(result.legalRentM2)} ${t("resultPerSquareMeter")}`
+    : "-";
+  resultFields.legalTotal.textContent = Number.isFinite(result.legalRentTotal) ? formatCurrency(result.legalRentTotal) : "-";
+  resultFields.currentRent.textContent = Number.isFinite(result.currentRent) ? formatCurrency(result.currentRent) : "-";
+  resultFields.overpayment.textContent = Number.isFinite(result.overpayment) ? formatCurrency(result.overpayment) : "-";
+  resultFields.durationMonths.textContent = Number.isFinite(result.contractMonths)
+    ? `${result.contractMonths} ${t("resultDurationUnit")}`
+    : "-";
+  resultFields.refund.textContent = Number.isFinite(result.refund) ? formatCurrency(result.refund) : "-";
 
   const summaryParts = [];
-  if (result.buildingAge === "after_2021") {
-    summaryParts.push(t("summaryAfter2021"));
-  }
   if (result.riskLevel === "high") {
     summaryParts.push(t("summaryHigh"));
   } else if (result.riskLevel === "medium") {
@@ -1594,6 +1878,16 @@ nextBtn.addEventListener("click", () => {
     return;
   }
 
+  if (currentStep === 2) {
+    const selectedBuildingAge = form.querySelector('input[name="building_age"]:checked')?.value;
+    if (selectedBuildingAge === "from_1945_on") {
+      const result = calculateIneligibleByBuildingAgeResult();
+      renderResult(result);
+      showStep(5);
+      return;
+    }
+  }
+
   if (currentStep === 4) {
     const result = calculateResult();
     renderResult(result);
@@ -1605,6 +1899,11 @@ nextBtn.addEventListener("click", () => {
 });
 
 prevBtn.addEventListener("click", () => {
+  if (currentStep === 5 && lastResult?.ineligibleReason === "building_age_from_1945_on") {
+    showStep(2);
+    return;
+  }
+
   if (currentStep > 1) {
     showStep(currentStep - 1);
   }
@@ -1616,6 +1915,9 @@ indicatorItems.forEach((item, index) => {
   item.title = `${targetStep}`;
 
   item.addEventListener("click", () => {
+    if (lastResult?.ineligibleReason === "building_age_from_1945_on" && targetStep > 2) {
+      return;
+    }
     if (targetStep < currentStep) {
       showStep(targetStep);
     }
@@ -1665,6 +1967,7 @@ initializeHeroCounterObserver();
 initializeScrollReveal();
 setLanguage("de");
 startHeroCityRotation();
+initializeReferenceSlider();
 showStep(1);
 updateBuildingAgeNotice();
 initializeAddressAutocomplete();
