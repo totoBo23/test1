@@ -7,7 +7,7 @@ const translations = {
     navTrust: "Vertrauen",
     navFaq: "FAQ",
     navContact: "Kontakt",
-    heroEyebrow: "Mietcheck für Innsbruck und Tirol",
+    heroEyebrow: "Mietcheck für Innsbruck",
     heroTitlePrefix: "Prüfen Sie schnell, ob Ihre Miete in ",
     heroTitleSuffix: " zu hoch ist.",
     heroSubtitle:
@@ -23,11 +23,13 @@ const translations = {
     heroMetric2Label: "potenzieller Erstattungszeitraum",
     heroMetric3Value: "Risikofrei",
     heroMetric3Label: "ohne Vorabkosten",
+    heroMetric3MainValue: "Kein finanzielles Risiko",
+    heroMetric3MainLabel: "Keine Vorabkosten.",
     heroTrustEyebrow: "Innsbruck im Fokus",
-    heroTrustTitle: "Lokal in Tirol verankert, digital schnell erreichbar.",
+    heroTrustTitle: "Lokal auf Innsbruck fokussiert, digital schnell erreichbar.",
     heroTrustText:
       "Sie starten online in Minuten und erhalten bei qualifizierten Fällen eine persönliche juristische Einordnung.",
-    heroImageLabel: "Innsbruck, Tirol",
+    heroImageLabel: "Innsbruck, Österreich",
 
     howTitle: "So laufen die Schritte ab",
     howLead: "Klarer Ablauf in vier einfachen Schritten.",
@@ -52,10 +54,16 @@ const translations = {
     whyTitle: "Für viele Altbauwohnungen gelten gesetzliche Mietobergrenzen",
     whyLead:
       "Wenn Sie in einem älteren Gebäude wohnen, könnte Ihre Miete über dem gesetzlich zulässigen Betrag liegen.",
+    whyLeadMain:
+      "Wenn Sie in einem älteren Gebäude wohnen, könnte Ihre Miete über den gesetzlichen Grenzen liegen.",
     whyParagraph1:
       "Nach österreichischem Mietrecht fallen viele Wohnungen mit Baujahr vor 1945 unter regulierte Mietregeln. Diese Grenzen werden bei Vertragsabschluss jedoch nicht immer korrekt angewendet.",
+    whyParagraph1Main:
+      "In Österreich unterliegen viele Wohnungen mit Baujahr vor 1945 regulierten Mietregeln, diese werden jedoch nicht immer korrekt angewendet.",
     whyParagraph2:
       "Unser Mietcheck gibt Ihnen schnell eine erste Einschätzung, ob Ihre Wohnung betroffen sein könnte.",
+    whyParagraph2Main:
+      "Unser Mietcheck gibt Ihnen schnell eine erste Einschätzung. Wenn Ihr Fall passend aussieht, begleiten wir die nächsten Schritte gemeinsam mit unseren Rechtspartnern.",
     whyParagraph3:
       "Wenn Ihr Fall geeignet wirkt, begleiten wir die nächsten Schritte gemeinsam mit unseren Rechtspartnern.",
     whyCta: "Prüfen Sie, ob Ihre Miete zu hoch ist",
@@ -63,7 +71,7 @@ const translations = {
 
     trustTitle: "Über uns",
     trustLead:
-      "Wir sind ein mieterfokussierter Rent Check Service für Tirol. Unser Ziel ist es, mögliche Miet-Überzahlungen schnell sichtbar zu machen und den nächsten sinnvollen Schritt klar zu zeigen.",
+      "Wir sind ein mieterfokussierter Rent Check Service für Innsbruck. Unser Ziel ist es, mögliche Miet-Überzahlungen schnell sichtbar zu machen und den nächsten sinnvollen Schritt klar zu zeigen.",
     trustCard1Title: "Unsere Mission",
     trustCard1Text:
       "Mietrechte sollen für Mieter verständlich und leicht zugänglich sein - ohne unnötige Komplexität.",
@@ -90,6 +98,14 @@ const translations = {
     stepNav3: "Miete",
     stepNav4: "Merkmale",
     stepNav5: "Ergebnis",
+    simplifiedStep1Title: "Schritt 1: Gebäude-Basics",
+    simplifiedStep2Title: "Schritt 2: Mietdaten und Vertragszeitraum",
+    simplifiedStep3Title: "Schritt 3: Wohnungsmerkmale",
+    simplifiedStep4Title: "Schritt 4: Ihre Ersteinschätzung",
+    simplifiedStepNav1: "Gebäude",
+    simplifiedStepNav2: "Miete",
+    simplifiedStepNav3: "Merkmale",
+    simplifiedStepNav4: "Ergebnis",
     labelAddressSearch: "Adresse",
     placeholderAddressSearch: "z.B. Museumstrasse 12, Innsbruck",
     addressHelp: "Starten Sie mit der Eingabe und wählen Sie eine Adresse aus der Liste.",
@@ -235,8 +251,8 @@ const translations = {
     insight1Text:
       "Verstehen Sie einfach, wie MRG funktioniert, welche Wohnungen oft betroffen sind und warum ein Mietcheck für Mieter sinnvoll ist.",
     insight2Meta: "Praxis-Check",
-    insight2ImageAlt: "Vorschaubild zur Altbau-Checkliste in Tirol",
-    insight2Title: "Altbau in Tirol: Wann ist eine Wohnung meist relevant?",
+    insight2ImageAlt: "Vorschaubild zur Altbau-Checkliste in Innsbruck",
+    insight2Title: "Altbau in Innsbruck: Wann ist eine Wohnung meist relevant?",
     insight2Text:
       "Eine einfache Checkliste zu Baujahr, Gebäudestruktur und Vertragsdaten - damit Mieter schneller einschätzen können, ob sich eine Prüfung lohnt.",
     insight3Meta: "Fallstrategie",
@@ -247,7 +263,8 @@ const translations = {
     insightReadMore: "Artikel lesen",
 
     referencesTitle: "",
-    referencesLead: "What tenants say about us",
+    referencesEyebrow: "Mieterstimmen",
+    referencesLead: "Was Mieter über uns sagen",
     referencesPrevAria: "Vorherige Referenz",
     referencesNextAria: "Nächste Referenz",
     reference1Name: "Anna K. · Innsbruck",
@@ -300,7 +317,7 @@ const translations = {
 
     imprintLink: "Impressum",
     privacyLink: "Datenschutz",
-    footerDisclaimer: "Ersteinschätzung für Mietthemen in Innsbruck und Tirol. Keine Rechtsberatung.",
+    footerDisclaimer: "Ersteinschätzung für Mietthemen in Innsbruck. Keine Rechtsberatung.",
     footerCompanyName: "Betreiber: [Firmenname GmbH]",
     footerCompanyLocation: "Sitz: Innsbruck, Tirol",
     footerCompanyContact: "Kontakt: [kontakt@ihre-domain.at]",
@@ -324,7 +341,7 @@ const translations = {
     navTrust: "Trust",
     navFaq: "FAQ",
     navContact: "Contact us",
-    heroEyebrow: "Rent check for Innsbruck and Tyrol",
+    heroEyebrow: "Rent check for Innsbruck",
     heroTitlePrefix: "Quickly check whether your rent in ",
     heroTitleSuffix: " may be too high.",
     heroSubtitle:
@@ -340,11 +357,13 @@ const translations = {
     heroMetric2Label: "potential refund horizon",
     heroMetric3Value: "Risk Free",
     heroMetric3Label: "no upfront cost",
+    heroMetric3MainValue: "No financial risk",
+    heroMetric3MainLabel: "No upfront cost.",
     heroTrustEyebrow: "Innsbruck focus",
-    heroTrustTitle: "Locally rooted in Tyrol, fast and digital to access.",
+    heroTrustTitle: "Focused on Innsbruck, fast and digital to access.",
     heroTrustText:
       "Start online in minutes and receive a personal legal assessment for qualified cases.",
-    heroImageLabel: "Innsbruck, Tyrol",
+    heroImageLabel: "Innsbruck, Austria",
 
     howTitle: "How our service works",
     howLead: "A simple and transparent process in four easy steps.",
@@ -369,10 +388,16 @@ const translations = {
     whyTitle: "Many apartments in buildings built before 1945 are subject to legal rent limits.",
     whyLead:
       "If you live in an older building, your rent may be higher than the legally permitted amount.",
+    whyLeadMain:
+      "If you live in an older building, your rent may exceed legal limits.",
     whyParagraph1:
       "Under Austrian tenancy law, many pre-1945 apartments fall under regulated rent rules. However, these limits are not always applied correctly when rental contracts are signed.",
+    whyParagraph1Main:
+      "In Austria, many pre-1945 apartments are subject to regulated rent rules, but these are not always correctly applied.",
     whyParagraph2:
       "Our rent check gives you a quick first estimate of whether your apartment may be affected.",
+    whyParagraph2Main:
+      "Our rent check gives you a quick first estimate, and if your case looks eligible, we support the next steps with our legal partners.",
     whyParagraph3:
       "If your case appears eligible, we handle the next steps together with our legal partners.",
     whyCta: "Check if your rent is too high",
@@ -380,7 +405,7 @@ const translations = {
 
     trustTitle: "About us",
     trustLead:
-      "We are a tenant-focused rent check service for Tyrol. Our goal is to identify potential overpayment quickly and guide you to the right next step with clarity.",
+      "We are a tenant-focused rent check service for Innsbruck. Our goal is to identify potential overpayment quickly and guide you to the right next step with clarity.",
     trustCard1Title: "Our mission",
     trustCard1Text:
       "Make rent rights easier to understand and accessible to tenants without unnecessary legal complexity.",
@@ -407,6 +432,14 @@ const translations = {
     stepNav3: "Rent",
     stepNav4: "Features",
     stepNav5: "Result",
+    simplifiedStep1Title: "Step 1: Building basics",
+    simplifiedStep2Title: "Step 2: Rent and contract period",
+    simplifiedStep3Title: "Step 3: Apartment features",
+    simplifiedStep4Title: "Step 4: Your initial estimate",
+    simplifiedStepNav1: "Building",
+    simplifiedStepNav2: "Rent",
+    simplifiedStepNav3: "Features",
+    simplifiedStepNav4: "Result",
     labelAddressSearch: "Address",
     placeholderAddressSearch: "e.g. Museumstrasse 12, Innsbruck",
     addressHelp: "Start typing and select an address from the suggestions.",
@@ -552,8 +585,8 @@ const translations = {
     insight1Text:
       "A clear introduction to how MRG works, which apartments are often relevant, and why a structured rent check helps tenants.",
     insight2Meta: "Practical Check",
-    insight2ImageAlt: "Preview image for old-building checklist in Tyrol",
-    insight2Title: "Old buildings in Tyrol: when is an apartment usually relevant?",
+    insight2ImageAlt: "Preview image for old-building checklist in Innsbruck",
+    insight2Title: "Old buildings in Innsbruck: when is an apartment usually relevant?",
     insight2Text:
       "A simple checklist for building age, building structure, and contract data so tenants can quickly assess if review is worth it.",
     insight3Meta: "Case Strategy",
@@ -564,6 +597,7 @@ const translations = {
     insightReadMore: "Read article",
 
     referencesTitle: "",
+    referencesEyebrow: "Testimonials",
     referencesLead: "What tenants say about us",
     referencesPrevAria: "Previous reference",
     referencesNextAria: "Next reference",
@@ -617,7 +651,7 @@ const translations = {
 
     imprintLink: "Legal notice",
     privacyLink: "Privacy policy",
-    footerDisclaimer: "Initial estimate for rental issues in Innsbruck and Tyrol. Not legal advice.",
+    footerDisclaimer: "Initial estimate for rental issues in Innsbruck. Not legal advice.",
     footerCompanyName: "Operator: [Company Name GmbH]",
     footerCompanyLocation: "Registered office: Innsbruck, Tyrol",
     footerCompanyContact: "Contact: [contact@your-domain.at]",
@@ -679,14 +713,6 @@ const adjustments = {
   }
 };
 
-const totalSteps = 5;
-let currentStep = 1;
-let currentLang = "de";
-let lastResult = null;
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let heroCountersAnimated = false;
-let heroCounterObserver = null;
-
 const form = document.getElementById("mrg-form");
 const stepElements = Array.from(document.querySelectorAll(".form-step"));
 const indicatorItems = Array.from(document.querySelectorAll("#step-indicators li"));
@@ -694,6 +720,18 @@ const progressFill = document.getElementById("progress-fill");
 const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
 const buildingAgeNotice = document.getElementById("building-age-notice");
+const isInnsbruckSimplifiedFlow = form?.dataset.calculatorVersion === "innsbruck-simplified";
+const STEP_BUILDING = isInnsbruckSimplifiedFlow ? 1 : 2;
+const STEP_RENT = isInnsbruckSimplifiedFlow ? 2 : 3;
+const STEP_FEATURES = isInnsbruckSimplifiedFlow ? 3 : 4;
+const STEP_RESULT = isInnsbruckSimplifiedFlow ? 4 : 5;
+const totalSteps = stepElements.length;
+let currentStep = 1;
+let currentLang = "de";
+let lastResult = null;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let heroCountersAnimated = false;
+let heroCounterObserver = null;
 
 const qualifiedBox = document.getElementById("qualified-box");
 const notQualifiedBox = document.getElementById("not-qualified-box");
@@ -731,11 +769,11 @@ const resultUi = {
   ineligibleMessage: document.getElementById("result-ineligible-message"),
   overview: document.querySelector(".result-overview"),
   details: document.querySelector(".result-details-card"),
-  disclaimer: document.querySelector(".form-step[data-step='5'] .disclaimer")
+  disclaimer: document.querySelector(`.form-step[data-step='${STEP_RESULT}'] .disclaimer`)
 };
 const heroCounterNodes = Array.from(document.querySelectorAll("[data-hero-counter]"));
 const heroCityNode = document.getElementById("hero-city");
-const rotatingHeroCities = ["Innsbruck", "Kufstein", "Telfs", "Hall in Tirol", "Wörgl"];
+const rotatingHeroCities = ["Innsbruck"];
 let heroCityIndex = 0;
 let heroCityTimerId = null;
 const insightLinkNodes = Array.from(document.querySelectorAll("#insights a[data-insight-id]"));
@@ -791,6 +829,10 @@ function startHeroCityRotation() {
   }
 
   heroCityNode.textContent = rotatingHeroCities[heroCityIndex];
+  if (rotatingHeroCities.length === 1) {
+    return;
+  }
+
   if (heroCityTimerId) {
     window.clearInterval(heroCityTimerId);
   }
@@ -1049,6 +1091,7 @@ function calculateContractMonths(startDate, endDate) {
 function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
+  const navAboutLink = document.getElementById("nav-about-link");
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
@@ -1073,6 +1116,11 @@ function setLanguage(lang) {
       node.setAttribute("href", linksForLang[id]);
     }
   });
+
+  if (navAboutLink) {
+    navAboutLink.setAttribute("href", currentLang === "en" ? "about.html" : "about-de.html");
+  }
+
   setReferenceA11yLabels();
 
   updateNavigationButtons();
@@ -1114,7 +1162,7 @@ function updateNavigationButtons() {
   } else {
     nextBtn.hidden = false;
     prevBtn.textContent = t("btnBack");
-    nextBtn.textContent = currentStep === 4 ? t("btnEstimate") : t("btnNext");
+    nextBtn.textContent = currentStep === STEP_FEATURES ? t("btnEstimate") : t("btnNext");
   }
 }
 
@@ -1143,19 +1191,19 @@ function validateStep(step) {
     return false;
   }
 
-  if (step === 3 && Number(numberFields.size.value) <= 0) {
+  if (step === STEP_RENT && Number(numberFields.size.value) <= 0) {
     numberFields.size.setAttribute("aria-invalid", "true");
     numberFields.size.focus();
     return false;
   }
 
-  if (step === 3 && Number(numberFields.netRent.value) <= 0) {
+  if (step === STEP_RENT && Number(numberFields.netRent.value) <= 0) {
     numberFields.netRent.setAttribute("aria-invalid", "true");
     numberFields.netRent.focus();
     return false;
   }
 
-  if (step === 3) {
+  if (step === STEP_RENT) {
     const startDate = parseLocalDate(contractFields.start.value);
     const endDate = parseLocalDate(contractFields.end.value);
     const today = getTodayAtMidnight();
@@ -1225,7 +1273,7 @@ function calculateIneligibleByBuildingAgeResult() {
 
 function calculateResult() {
   const data = new FormData(form);
-  const state = data.get("state");
+  const state = isInnsbruckSimplifiedFlow ? "Tirol" : data.get("state");
   const size = Number(data.get("apartment_size_m2")) || 0;
   const currentRent = Number(data.get("monthly_rent_net")) || 0;
   const buildingAge = data.get("building_age") || "unknown";
@@ -1241,9 +1289,7 @@ function calculateResult() {
     (adjustments.floor_level[data.get("floor_level")] || 0) +
     (adjustments.elevator[data.get("elevator")] || 0) +
     (adjustments.balcony[data.get("balcony")] || 0) +
-    (adjustments.condition[data.get("condition")] || 0) +
-    (adjustments.equipment[data.get("equipment")] || 0) +
-    (adjustments.location_quality[data.get("location_quality")] || 0);
+    (adjustments.condition[data.get("condition")] || 0);
 
   const legalRentM2 = Math.max(base + totalAdjustments, 0);
   const legalRentTotal = legalRentM2 * size;
@@ -1393,20 +1439,20 @@ nextBtn.addEventListener("click", () => {
     return;
   }
 
-  if (currentStep === 2) {
+  if (currentStep === STEP_BUILDING) {
     const selectedBuildingAge = form.querySelector('input[name="building_age"]:checked')?.value;
     if (selectedBuildingAge === "from_1945_on") {
       const result = calculateIneligibleByBuildingAgeResult();
       renderResult(result);
-      showStep(5);
+      showStep(STEP_RESULT);
       return;
     }
   }
 
-  if (currentStep === 4) {
+  if (currentStep === STEP_FEATURES) {
     const result = calculateResult();
     renderResult(result);
-    showStep(5);
+    showStep(STEP_RESULT);
     return;
   }
 
@@ -1414,8 +1460,8 @@ nextBtn.addEventListener("click", () => {
 });
 
 prevBtn.addEventListener("click", () => {
-  if (currentStep === 5 && lastResult?.ineligibleReason === "building_age_from_1945_on") {
-    showStep(2);
+  if (currentStep === STEP_RESULT && lastResult?.ineligibleReason === "building_age_from_1945_on") {
+    showStep(STEP_BUILDING);
     return;
   }
 
@@ -1430,7 +1476,7 @@ indicatorItems.forEach((item, index) => {
   item.title = `${targetStep}`;
 
   item.addEventListener("click", () => {
-    if (lastResult?.ineligibleReason === "building_age_from_1945_on" && targetStep > 2) {
+    if (lastResult?.ineligibleReason === "building_age_from_1945_on" && targetStep > STEP_BUILDING) {
       return;
     }
     if (targetStep < currentStep) {
