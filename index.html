@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="assets/css/style.css" />
       <script src="assets/js/access.js"></script>
   </head>
-  <body>
+  <body class="main-home">
     <header class="site-header">
       <div class="container header-inner">
         <a href="#" class="brand" data-i18n="brandName">Check your Rent</a>
         <nav class="header-nav">
           <a href="#calculator" data-i18n="navCalculator">Rent Calculator</a>
-          <a href="#trust" data-i18n="navAbout">About Us</a>
+          <a href="about-de.html" id="nav-about-link" data-i18n="navAbout">About Us</a>
           <a href="#faq" data-i18n="navFaq">FAQ</a>
           <a href="mailto:contact@test.com" data-i18n="navContact">Contact us</a>
         </nav>
@@ -46,7 +46,7 @@
         <div class="hero-dark-layer" aria-hidden="true"></div>
         <div class="container hero-content">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="heroEyebrow">Mietcheck für Innsbruck und Tirol</p>
+            <p class="eyebrow" data-i18n="heroEyebrow">Mietcheck für Innsbruck</p>
             <h1>
               <span class="hero-title-prefix" data-i18n="heroTitlePrefix">Prufen Sie schnell, ob Ihre Miete in </span><span class="hero-city" id="hero-city">Innsbruck</span><span class="hero-title-suffix" data-i18n="heroTitleSuffix"> zu hoch ist.</span>
             </h1>
@@ -66,9 +66,9 @@
                 <strong data-i18n="heroMetric2Value" data-hero-counter>36 Monate</strong>
                 <span data-i18n="heroMetric2Label">potenzieller Erstattungszeitraum</span>
               </article>
-              <article class="hero-metric">
-                <strong data-i18n="heroMetric3Value" data-hero-counter>Risikofrei</strong>
-                <span data-i18n="heroMetric3Label">ohne Vorabkosten</span>
+              <article class="hero-metric hero-metric-highlight">
+                <strong data-i18n="heroMetric3MainValue">Kein finanzielles Risiko</strong>
+                <span data-i18n="heroMetric3MainLabel">Keine Vorabkosten.</span>
               </article>
             </div>
           </div>
@@ -80,19 +80,16 @@
           <div class="didyouknow-copy">
             <p class="didyouknow-eyebrow" data-i18n="whyEyebrow">Did you know?</p>
             <h2 data-i18n="whyTitle">Many apartments in buildings built before 1945 are subject to legal rent limits.</h2>
-            <p class="section-lead" data-i18n="whyLead">
-              If you live in an older building, your rent may be higher than the legally permitted amount.
+            <p class="section-lead" data-i18n="whyLeadMain">
+              If you live in an older building, your rent may exceed legal limits.
             </p>
 
             <div class="why-points">
-              <p data-i18n="whyParagraph1">
-                Under Austrian tenancy law, many pre-1945 apartments fall under regulated rent rules. However, these limits are not always applied correctly when rental contracts are signed.
+              <p data-i18n="whyParagraph1Main">
+                In Austria, many pre-1945 apartments are subject to regulated rent rules, but these are not always correctly applied.
               </p>
-              <p data-i18n="whyParagraph2">
-                Our rent check gives you a quick first estimate of whether your apartment may be affected.
-              </p>
-              <p data-i18n="whyParagraph3">
-                If your case appears eligible, we handle the next steps together with our legal partners.
+              <p data-i18n="whyParagraph2Main">
+                Our rent check gives you a quick first estimate, and if your case looks eligible, we support the next steps with our legal partners.
               </p>
             </div>
             <a class="btn btn-primary didyouknow-cta" href="#calculator" data-i18n="whyCta">
@@ -102,7 +99,7 @@
 
           <figure class="didyouknow-media">
             <img
-              src="assets/images/innsbruck-rent-cap-section.jpg"
+              src="assets/images/Inssbruck buildings.jpg"
               alt="Innsbruck Stadtansicht"
               data-i18n-alt="whyImageAlt"
               onerror="this.onerror=null;this.src='assets/images/support-team.svg';"
@@ -175,51 +172,26 @@
               <ol class="step-indicators" id="step-indicators">
                 <li class="is-current">
                   <span class="step-badge">1</span>
-                  <span class="step-label" data-i18n="stepNav1">Region</span>
+                  <span class="step-label" data-i18n="simplifiedStepNav1">Gebäude</span>
                 </li>
                 <li>
                   <span class="step-badge">2</span>
-                  <span class="step-label" data-i18n="stepNav2">Gebäude</span>
+                  <span class="step-label" data-i18n="simplifiedStepNav2">Miete</span>
                 </li>
                 <li>
                   <span class="step-badge">3</span>
-                  <span class="step-label" data-i18n="stepNav3">Miete</span>
+                  <span class="step-label" data-i18n="simplifiedStepNav3">Merkmale</span>
                 </li>
                 <li>
                   <span class="step-badge">4</span>
-                  <span class="step-label" data-i18n="stepNav4">Merkmale</span>
-                </li>
-                <li>
-                  <span class="step-badge">5</span>
-                  <span class="step-label" data-i18n="stepNav5">Ergebnis</span>
+                  <span class="step-label" data-i18n="simplifiedStepNav4">Ergebnis</span>
                 </li>
               </ol>
             </div>
 
-            <form id="mrg-form" novalidate>
+            <form id="mrg-form" data-calculator-version="innsbruck-simplified" novalidate>
               <section class="form-step is-active" data-step="1">
-                <h3 data-i18n="step1Title">Schritt 1: Bundesland</h3>
-                <div class="grid-2">
-                  <div class="field field-full">
-                    <label for="state" data-i18n="labelState">Bundesland</label>
-                    <select id="state" name="state" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="Tirol" data-i18n="stateTirol">Tirol</option>
-                      <option value="Vienna" data-i18n="stateVienna">Wien</option>
-                      <option value="Salzburg" data-i18n="stateSalzburg">Salzburg</option>
-                      <option value="Upper Austria" data-i18n="stateUpperAustria">Oberösterreich</option>
-                      <option value="Lower Austria" data-i18n="stateLowerAustria">Niederösterreich</option>
-                      <option value="Styria" data-i18n="stateStyria">Steiermark</option>
-                      <option value="Carinthia" data-i18n="stateCarinthia">Kärnten</option>
-                      <option value="Vorarlberg" data-i18n="stateVorarlberg">Vorarlberg</option>
-                      <option value="Burgenland" data-i18n="stateBurgenland">Burgenland</option>
-                    </select>
-                  </div>
-                </div>
-              </section>
-
-              <section class="form-step" data-step="2">
-                <h3 data-i18n="step2Title">Schritt 2: Gebäude-Basics</h3>
+                <h3 data-i18n="simplifiedStep1Title">Schritt 1: Gebäude-Basics</h3>
                 <div class="field stack-top">
                   <label class="label-with-tip">
                     <span data-i18n="labelBuildingAge">Wurde das Gebäude vor 1945 gebaut?</span>
@@ -236,8 +208,8 @@
                 </div>
               </section>
 
-              <section class="form-step" data-step="3">
-                <h3 data-i18n="step3Title">Schritt 3: Mietdaten und Vertragszeitraum</h3>
+              <section class="form-step" data-step="2">
+                <h3 data-i18n="simplifiedStep2Title">Schritt 2: Mietdaten und Vertragszeitraum</h3>
                 <div class="grid-2">
                   <div class="field">
                     <label for="sizeM2" class="label-with-tip">
@@ -292,8 +264,8 @@
                 </div>
               </section>
 
-              <section class="form-step" data-step="4">
-                <h3 data-i18n="step4Title">Schritt 4: Wohnungsmerkmale</h3>
+              <section class="form-step" data-step="3">
+                <h3 data-i18n="simplifiedStep3Title">Schritt 3: Wohnungsmerkmale</h3>
                 <div class="grid-2">
                   <div class="field">
                     <label for="floorLevel" data-i18n="labelFloor">Stockwerk</label>
@@ -331,31 +303,11 @@
                       <option value="poor" data-i18n="conditionPoor">Schlecht</option>
                     </select>
                   </div>
-                  <div class="field">
-                    <label for="equipment" data-i18n="labelEquipment">Ausstattung</label>
-                    <select id="equipment" name="equipment" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="luxury" data-i18n="equipmentLuxury">Hochwertig</option>
-                      <option value="standard" data-i18n="equipmentStandard">Standard</option>
-                      <option value="basic" data-i18n="equipmentBasic">Einfach</option>
-                      <option value="old" data-i18n="equipmentOld">Alt</option>
-                    </select>
-                  </div>
-                  <div class="field">
-                    <label for="locationQuality" data-i18n="labelLocation">Lage</label>
-                    <select id="locationQuality" name="location_quality" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="very_central" data-i18n="locationVeryCentral">Sehr zentral</option>
-                      <option value="good" data-i18n="locationGood">Gut</option>
-                      <option value="average" data-i18n="locationAverage">Durchschnittlich</option>
-                      <option value="poor" data-i18n="locationPoor">Schwach</option>
-                    </select>
-                  </div>
                 </div>
               </section>
 
-              <section class="form-step" data-step="5">
-                <h3 data-i18n="step5Title">Schritt 5: Ihre Ersteinschätzung</h3>
+              <section class="form-step" data-step="4">
+                <h3 data-i18n="simplifiedStep4Title">Schritt 4: Ihre Ersteinschätzung</h3>
                 <div class="result-summary" id="result-summary"></div>
                 <p class="step-lead" id="result-intro" data-i18n="resultIntro">
                   Hier ist Ihre Ersteinschätzung auf einen Blick.
@@ -452,46 +404,9 @@
         </div>
       </section>
 
-      <section class="section" id="trust">
-        <div class="container">
-          <h2 data-i18n="trustTitle">Über uns</h2>
-          <p class="section-lead" data-i18n="trustLead">
-            Wir sind ein mieterfokussierter Rent Check Service für Tirol. Unser Ziel ist es, mögliche Miet-Überzahlungen schnell sichtbar zu machen und den nächsten sinnvollen Schritt klar zu zeigen.
-          </p>
-
-          <div class="cards cards-3 trust-grid">
-            <article class="card">
-              <h3 data-i18n="trustCard1Title">Unsere Mission</h3>
-              <p data-i18n="trustCard1Text">Mietrechte sollen für Mieter verständlich und leicht zugänglich sein - ohne unnötige Komplexität.</p>
-            </article>
-            <article class="card">
-              <h3 data-i18n="trustCard2Title">So arbeiten wir</h3>
-              <p data-i18n="trustCard2Text">Wir verbinden einen schnellen digitalen Vorab-Check mit einer strukturierten Fallprüfung durch erfahrene Rechtspartner.</p>
-            </article>
-            <article class="card">
-              <h3 data-i18n="trustCard3Title">Wofür wir stehen</h3>
-              <p data-i18n="trustCard3Text">Klare Kommunikation, realistische Einschätzungen und transparente Begleitung vom ersten Ergebnis bis zur Lösung.</p>
-            </article>
-          </div>
-
-          <div class="trust-panel">
-            <h3 data-i18n="trustPanelTitle">Was Sie von uns erwarten können</h3>
-            <ul class="trust-list">
-              <li data-i18n="trustList1">Eine schnelle Ersteinschätzung in wenigen Minuten.</li>
-              <li data-i18n="trustList2">Eine klare Empfehlung, ob Ihr Fall weiterverfolgt werden sollte.</li>
-              <li data-i18n="trustList3">Sichere und vertrauliche Behandlung Ihrer Unterlagen.</li>
-              <li data-i18n="trustList4">Transparente Updates, damit Sie die nächsten Schritte jederzeit kennen.</li>
-            </ul>
-            <p class="trust-note" data-i18n="trustNote">
-              Wir übernehmen alle notwendigen Kosten zur Durchsetzung Ihrer Ansprüche. Es macht keinen Unterschied, ob zuerst eine außergerichtliche Einigung erreicht wird oder ob wir Ihre Ansprüche vor Gericht durchsetzen müssen.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section class="section references-section" id="references">
         <div class="container">
-          <p class="section-lead" data-i18n="referencesLead">What tenants say about us</p>
+          <p class="references-eyebrow" data-i18n="referencesEyebrow">Mieterstimmen</p>
 
           <div class="reference-slider">
             <div class="reference-track" id="reference-track">
@@ -542,7 +457,7 @@
         </div>
       </section>
 
-      <section class="section" id="insights">
+      <section class="section insights-section" id="insights">
         <div class="container">
           <h2 data-i18n="insightsTitle">Studien und Ratgeber für Mieter</h2>
           <p class="section-lead" data-i18n="insightsLead">
@@ -580,7 +495,7 @@
               </figure>
               <div class="insight-body">
                 <p class="insight-meta" data-i18n="insight2Meta">Praxis-Check</p>
-                <h3 data-i18n="insight2Title">Altbau in Tirol: Wann ist eine Wohnung meist relevant?</h3>
+                <h3 data-i18n="insight2Title">Altbau in Innsbruck: Wann ist eine Wohnung meist relevant?</h3>
                 <p data-i18n="insight2Text">
                   Eine einfache Checkliste zu Baujahr, Gebäudestruktur und Vertragsdaten - damit Mieter schneller einschätzen können, ob sich eine Prüfung lohnt.
                 </p>
@@ -708,7 +623,7 @@
       <div class="container footer-inner">
         <div>
           <p data-i18n="brandName">Check your Rent</p>
-          <p data-i18n="footerDisclaimer">Ersteinschätzung für Mietthemen in Innsbruck und Tirol. Keine Rechtsberatung.</p>
+          <p data-i18n="footerDisclaimer">Ersteinschätzung für Mietthemen in Innsbruck. Keine Rechtsberatung.</p>
         </div>
         <div>
           <p data-i18n="footerCompanyName">Betreiber: [Firmenname GmbH]</p>
