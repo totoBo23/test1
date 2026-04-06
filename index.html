@@ -3,16 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check your Rent | Innsbruck</title>
+    <title>MietKontrolle.at | Innsbruck</title>
     <meta
       name="description"
       content="Innsbruck-focused MRG rent check: estimate legal rent, overpayment, and potential refund in minutes."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
       <script src="assets/js/access.js"></script>
@@ -20,7 +14,7 @@
   <body class="main-home">
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#" class="brand" data-i18n="brandName">Check your Rent</a>
+        <a href="#" class="brand" data-i18n="brandName">MietKontrolle.at</a>
         <nav class="header-nav">
           <a href="#calculator" data-i18n="navCalculator">Rent Calculator</a>
           <a href="about-de.html" id="nav-about-link" data-i18n="navAbout">About Us</a>
@@ -38,9 +32,9 @@
       <section class="hero hero-combo">
         <div class="hero-photo-layer" aria-hidden="true">
           <img
-            src="assets/images/innsbruck-hero.jpg"
+            class="hero-photo is-active"
+            src="assets/images/hero-rotation/Hero1.jpg"
             alt=""
-            onerror="this.onerror=null;this.src='assets/images/support-team.svg';"
           />
         </div>
         <div class="hero-dark-layer" aria-hidden="true"></div>
@@ -180,11 +174,7 @@
                 </li>
                 <li>
                   <span class="step-badge">3</span>
-                  <span class="step-label" data-i18n="simplifiedStepNav3">Merkmale</span>
-                </li>
-                <li>
-                  <span class="step-badge">4</span>
-                  <span class="step-label" data-i18n="simplifiedStepNav4">Ergebnis</span>
+                  <span class="step-label" data-i18n="simplifiedStepNav3">Ergebnis</span>
                 </li>
               </ol>
             </div>
@@ -233,7 +223,14 @@
                   </div>
                 </div>
                 <div class="field stack-top">
-                  <label data-i18n="labelContractType">Mietvertrag</label>
+                  <label class="label-with-tip">
+                    <span data-i18n="labelContractType">Mietvertrag</span>
+                    <span class="help-tip" tabindex="0" aria-describedby="contract-type-tooltip">?</span>
+                    <span class="help-tip-text" id="contract-type-tooltip" role="tooltip" data-i18n="labelContractTypeHelp">
+                      Befristet = endet an einem bestimmten Datum.
+                      Unbefristet = hat kein Enddatum.
+                    </span>
+                  </label>
                   <div class="radio-group" role="radiogroup" aria-label="contract type">
                     <label>
                       <input id="contractTypeOpen" type="radio" name="contract_type" value="unbefristet" required />
@@ -245,85 +242,68 @@
                     </label>
                   </div>
                 </div>
-                <div class="grid-2 stack-top contract-dates">
-                  <div class="field">
-                    <label for="contractStartDate" data-i18n="labelContractStartDate">Vertragsbeginn</label>
-                    <input id="contractStartDate" name="contract_start_date" type="date" required />
-                  </div>
-                  <div class="field">
-                    <label for="contractEndDate" data-i18n="labelContractEndDate">Vertragsende</label>
-                    <input id="contractEndDate" name="contract_end_date" type="date" />
-                  </div>
-                  <label class="checkbox field-full">
-                    <input id="contractStillRunning" name="contract_still_running" type="checkbox" />
-                    <span data-i18n="labelContractStillRunning">Der Vertrag läuft noch</span>
-                  </label>
-                  <p class="field-help field-full" data-i18n="contractDateHelp">
-                    Wenn der Vertrag noch läuft, wird bis heute gerechnet.
-                  </p>
+                  <div class="grid-2 stack-top contract-dates">
+                    <div class="field">
+                      <label for="contractStartDate" data-i18n="labelContractStartDate">Vertragsbeginn</label>
+                      <input id="contractStartDate" name="contract_start_date" type="date" required />
+                    </div>
+                    <div class="field" id="contract-end-field">
+                      <label for="contractEndDate" data-i18n="labelContractEndDate">Vertragsende</label>
+                      <input id="contractEndDate" name="contract_end_date" type="date" />
+                    </div>
+                    <label class="checkbox field-full" id="contract-running-field" hidden>
+                      <input id="contractStillRunning" name="contract_still_running" type="checkbox" />
+                      <span data-i18n="labelContractStillRunning">Der Vertrag läuft noch</span>
+                    </label>
                 </div>
               </section>
 
               <section class="form-step" data-step="3">
-                <h3 data-i18n="simplifiedStep3Title">Schritt 3: Wohnungsmerkmale</h3>
-                <div class="grid-2">
-                  <div class="field">
-                    <label for="floorLevel" data-i18n="labelFloor">Stockwerk</label>
-                    <select id="floorLevel" name="floor_level" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="ground_floor" data-i18n="floorGround">Erdgeschoss</option>
-                      <option value="1_to_3" data-i18n="floor1to3">1 bis 3</option>
-                      <option value="4_plus" data-i18n="floor4plus">4 oder hoher</option>
-                    </select>
-                  </div>
-                  <div class="field">
-                    <label for="elevator" data-i18n="labelElevator">Aufzug</label>
-                    <select id="elevator" name="elevator" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="yes" data-i18n="yes">Ja</option>
-                      <option value="no" data-i18n="no">Nein</option>
-                    </select>
-                  </div>
-                  <div class="field">
-                    <label for="balcony" data-i18n="labelBalcony">Aussenflache</label>
-                    <select id="balcony" name="balcony" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="none" data-i18n="balconyNone">Keine</option>
-                      <option value="balcony" data-i18n="balconyBalcony">Balkon</option>
-                      <option value="terrace" data-i18n="balconyTerrace">Terrasse</option>
-                    </select>
-                  </div>
-                  <div class="field">
-                    <label for="condition" data-i18n="labelCondition">Zustand</label>
-                    <select id="condition" name="condition" required>
-                      <option value="" data-i18n="stateSelectPlaceholder">Bitte auswählen</option>
-                      <option value="renovated" data-i18n="conditionRenovated">Saniert</option>
-                      <option value="good" data-i18n="conditionGood">Gut</option>
-                      <option value="normal" data-i18n="conditionNormal">Normal</option>
-                      <option value="poor" data-i18n="conditionPoor">Schlecht</option>
-                    </select>
-                  </div>
-                </div>
-              </section>
-
-              <section class="form-step" data-step="4">
-                <h3 data-i18n="simplifiedStep4Title">Schritt 4: Ihre Ersteinschätzung</h3>
+                <h3 data-i18n="simplifiedStep3Title">Schritt 3: Ihre Ersteinschätzung</h3>
                 <div class="result-summary" id="result-summary"></div>
                 <p class="step-lead" id="result-intro" data-i18n="resultIntro">
                   Hier ist Ihre Ersteinschätzung auf einen Blick.
                 </p>
                 <div class="result-ineligible-message" id="result-ineligible-message" hidden data-i18n="resultIneligibleByAgeMessage">
-                  For buildings constructed in 1945 or later, the Austrian Tenancy Act (MRG) does not apply.
+                  Für Gebäude mit Baujahr 1945 oder später gilt das österreichische Mietrechtsgesetz (MRG) nicht. Sie können das Formular trotzdem absenden und wir prüfen, ob es andere Punkte im Mietvertrag gibt, die sich genauer ansehen lassen.
                 </div>
 
                 <div class="result-overview">
                   <article class="result-hero-card">
-                    <p data-i18n="resultOverpaymentLabel">Mögliche Überzahlung pro Monat</p>
+                    <p class="result-card-label">
+                      <span data-i18n="resultOverpaymentLabel">Potenzielle Überzahlung pro Monat</span>
+                      <span class="label-with-tip">
+                        <span class="help-tip" tabindex="0" aria-describedby="result-overpayment-tooltip">?</span>
+                        <span class="help-tip-text" id="result-overpayment-tooltip" role="tooltip" data-i18n="resultOverpaymentHelp">
+                          Dieser Betrag zeigt, wie viel Ihre Miete pro Monat potenziell über der geschätzten zulässigen Miete liegt.
+                        </span>
+                      </span>
+                    </p>
                     <strong id="result-overpayment">-</strong>
                   </article>
                   <article class="result-hero-card is-accent">
-                    <p data-i18n="resultRefundLabel">Potenzieller Gewinn (Vertragsdauer)</p>
+                    <p class="result-card-label">
+                      <span id="result-refund-label" data-i18n="resultRefundLabel">Potenzielle Überzahlung bisher</span>
+                      <span class="label-with-tip">
+                        <span class="help-tip" tabindex="0" aria-describedby="result-refund-tooltip">?</span>
+                        <span class="help-tip-text" id="result-refund-tooltip" role="tooltip" data-i18n="resultRefundHelp">
+                          Dieser Betrag zeigt, wie viel Sie vom Vertragsbeginn bis zum Ende des berechneten Zeitraums potenziell zu viel gezahlt haben.
+                        </span>
+                      </span>
+                    </p>
                     <strong id="result-refund">-</strong>
+                  </article>
+                  <article class="result-hero-card" id="result-future-annual-card" hidden>
+                    <p class="result-card-label">
+                      <span id="result-future-annual-label" data-i18n="resultAnnualFutureLabel">Potenzielle künftige Überzahlung pro Jahr</span>
+                      <span class="label-with-tip">
+                        <span class="help-tip" tabindex="0" aria-describedby="result-future-annual-tooltip">?</span>
+                        <span class="help-tip-text" id="result-future-annual-tooltip" role="tooltip" data-i18n="resultAnnualFutureHelp">
+                          Dieser Betrag zeigt, wie viel Sie in einem weiteren Jahr potenziell zu viel zahlen würden, wenn die aktuelle monatliche Überzahlung gleich bleibt.
+                        </span>
+                      </span>
+                    </p>
+                    <strong id="result-future-annual">-</strong>
                   </article>
                 </div>
 
@@ -342,10 +322,6 @@
                       <dt data-i18n="resultLegalRentM2Label">Gesetzliche Miete (geschatzt) pro m²</dt>
                       <dd id="result-legal-m2">-</dd>
                     </div>
-                    <div class="result-detail-row">
-                      <dt data-i18n="resultDurationLabel">Berücksichtigte Vertragsdauer</dt>
-                      <dd id="result-duration-months">-</dd>
-                    </div>
                   </dl>
                 </article>
 
@@ -355,7 +331,7 @@
 
                 <div class="lead-box" id="qualified-box" hidden>
                   <h4 class="lead-title" data-i18n="qualifiedTitle">Ihr Fall sieht passend aus.</h4>
-                  <p data-i18n="qualifiedText">Senden Sie jetzt Ihre Daten und Unterlagen für die juristische Prüfung.</p>
+                  <p data-i18n="qualifiedText">Senden Sie jetzt Ihre Kontaktdaten für die juristische Prüfung. Sie erhalten direkt eine E-Mail und können darauf mit Ihrem Mietvertrag antworten.</p>
                   <div class="grid-2">
                     <div class="field">
                       <label for="leadName" data-i18n="labelName">Name</label>
@@ -369,10 +345,6 @@
                       <label for="leadPhone" data-i18n="labelPhone">Telefon</label>
                       <input id="leadPhone" name="lead_phone" type="tel" />
                     </div>
-                    <div class="field">
-                      <label for="contractUpload" data-i18n="labelUpload">Mietvertrag hochladen (optional)</label>
-                      <input id="contractUpload" name="contract_upload" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
-                    </div>
                   </div>
 
                   <label class="checkbox consent">
@@ -380,13 +352,15 @@
                     <span data-i18n="consentText">Ich stimme der Kontaktaufnahme und Verarbeitung meiner Angaben zur Fallprüfung zu.</span>
                   </label>
 
-                  <button type="button" id="submit-lead-btn" class="btn btn-primary" data-i18n="submitLeadBtn">Fall einreichen</button>
-                  <p class="legal-links-inline">
-                    <a href="datenschutz.html" data-i18n="privacyLink">Datenschutz</a>
-                    <span>&middot;</span>
-                    <a href="impressum.html" data-i18n="imprintLink">Impressum</a>
-                  </p>
-                  <p class="lead-feedback" id="lead-feedback"></p>
+                  <div class="lead-action-footer">
+                    <button type="button" id="submit-lead-btn" class="btn btn-primary" data-i18n="submitLeadBtn">Fall einreichen</button>
+                    <p class="legal-links-inline">
+                      <a href="datenschutz.html" data-i18n="privacyLink">Datenschutz</a>
+                      <span>&middot;</span>
+                      <a href="impressum.html" data-i18n="imprintLink">Impressum</a>
+                    </p>
+                    <p class="lead-feedback" id="lead-feedback"></p>
+                  </div>
                 </div>
 
                 <div class="lead-box muted" id="not-qualified-box" hidden>
@@ -622,7 +596,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div>
-          <p data-i18n="brandName">Check your Rent</p>
+          <p data-i18n="brandName">MietKontrolle.at</p>
           <p data-i18n="footerDisclaimer">Ersteinschätzung für Mietthemen in Innsbruck. Keine Rechtsberatung.</p>
         </div>
         <div>
