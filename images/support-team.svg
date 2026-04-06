@@ -1,0 +1,38 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="520" rx="28" fill="#F6E8DA"/>
+  <circle cx="140" cy="96" r="70" fill="#E6C9B1"/>
+  <circle cx="708" cy="410" r="88" fill="#D5E6F2"/>
+
+  <g transform="translate(122 112)">
+    <ellipse cx="108" cy="222" rx="108" ry="94" fill="#D06F42"/>
+    <rect x="40" y="248" width="136" height="120" rx="54" fill="#C15F35"/>
+    <circle cx="108" cy="114" r="62" fill="#F6D4B8"/>
+    <ellipse cx="108" cy="94" rx="74" ry="64" fill="#3C2B2B"/>
+    <circle cx="86" cy="116" r="5" fill="#322321"/>
+    <circle cx="130" cy="116" r="5" fill="#322321"/>
+    <path d="M90 143C96 153 120 153 126 143" stroke="#8A4B34" stroke-width="6" stroke-linecap="round"/>
+    <rect x="72" y="192" width="72" height="36" rx="16" fill="#F0B98D"/>
+  </g>
+
+  <g transform="translate(362 82)">
+    <ellipse cx="116" cy="248" rx="116" ry="102" fill="#225C82"/>
+    <rect x="42" y="274" width="148" height="128" rx="60" fill="#154F78"/>
+    <circle cx="116" cy="122" r="64" fill="#F7DCC4"/>
+    <ellipse cx="116" cy="98" rx="76" ry="66" fill="#2B3B4A"/>
+    <circle cx="94" cy="126" r="5" fill="#202D38"/>
+    <circle cx="140" cy="126" r="5" fill="#202D38"/>
+    <path d="M98 152C104 163 128 163 134 152" stroke="#875B45" stroke-width="6" stroke-linecap="round"/>
+    <rect x="76" y="202" width="78" height="38" rx="17" fill="#EDBE95"/>
+  </g>
+
+  <g transform="translate(570 132)">
+    <ellipse cx="84" cy="206" rx="84" ry="78" fill="#77A77E"/>
+    <rect x="30" y="226" width="108" height="100" rx="46" fill="#4E8C5C"/>
+    <circle cx="84" cy="108" r="52" fill="#F8D9BB"/>
+    <ellipse cx="84" cy="88" rx="62" ry="52" fill="#3B352F"/>
+    <circle cx="66" cy="110" r="4.5" fill="#2D2824"/>
+    <circle cx="104" cy="110" r="4.5" fill="#2D2824"/>
+    <path d="M70 133C75 143 93 143 98 133" stroke="#8A5D45" stroke-width="5" stroke-linecap="round"/>
+    <rect x="58" y="170" width="52" height="30" rx="13" fill="#EDBA8E"/>
+  </g>
+</svg>
